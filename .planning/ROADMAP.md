@@ -12,6 +12,14 @@
 
 **Requirements:** SHELL-01, SHELL-02, SHELL-03, SHELL-04, CHAT-01, CHAT-05, CHAT-06, CMD-01–05, CLIP-01, CLIP-02
 
+**Plans:** 4 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Scaffold Wails project, configure Tailwind/shadcn/Vitest, create Zustand stores
+- [ ] 01-02-PLAN.md — Three-column layout, terminal tabs, xterm.js preview, status bar
+- [ ] 01-03-PLAN.md — Go clipboard service with Wayland detection
+- [ ] 01-04-PLAN.md — Chat UI with echo response, command sidebar with click-to-copy
+
 **Key deliverables:**
 - Wails v2 project scaffolded with React + TypeScript template; builds and launches on Ubuntu 22.04+
 - Three-column layout with correct proportions (160px tabs / flex chat / 220px sidebar)
@@ -165,4 +173,4 @@
 | 6 | Security Hardening | memguard, audit log, response filtering |
 | 7 | Distribution | .deb, .rpm, AppImage, clean install |
 
-**Status:** Planning — no phases started
+**Status:** Phase 1 planned — ready for execution

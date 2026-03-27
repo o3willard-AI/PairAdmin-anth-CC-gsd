@@ -50,7 +50,7 @@
 
 ### Chat Interface
 
-- [ ] **CHAT-01**: User can type a question in the chat input and send it (Enter to send, Shift+Enter for newline)
+- [x] **CHAT-01**: User can type a question in the chat input and send it (Enter to send, Shift+Enter for newline)
 - [ ] **CHAT-02**: Every outgoing message includes the current terminal context (filtered) assembled as a system prompt prefix
 - [ ] **CHAT-03**: AI responses stream token-by-token into the chat area as they arrive
 - [ ] **CHAT-04**: AI-suggested commands are rendered in syntax-highlighted code blocks (react-shiki) with a "Copy to Terminal" button
@@ -61,8 +61,8 @@
 
 - [ ] **CMD-01**: Every command block the AI suggests is automatically added to the command sidebar
 - [ ] **CMD-02**: Commands in the sidebar are displayed in reverse-chronological order (newest at top)
-- [ ] **CMD-03**: Clicking a command in the sidebar copies it to the clipboard
-- [ ] **CMD-04**: Hovering over a sidebar command shows the original question that generated it
+- [x] **CMD-03**: Clicking a command in the sidebar copies it to the clipboard
+- [x] **CMD-04**: Hovering over a sidebar command shows the original question that generated it
 - [ ] **CMD-05**: "Clear History" button removes all commands from the sidebar for the current tab
 
 ### Clipboard & Command Execution
@@ -148,13 +148,13 @@
 | SHELL-02 | Phase 1 | Complete |
 | SHELL-03 | Phase 1 | Complete |
 | SHELL-04 | Phase 1 | Pending |
-| CHAT-01 | Phase 1 | Pending |
+| CHAT-01 | Phase 1 | Complete |
 | CHAT-05 | Phase 1 | Pending |
 | CHAT-06 | Phase 1 | Pending |
 | CMD-01 | Phase 1 | Pending |
 | CMD-02 | Phase 1 | Pending |
-| CMD-03 | Phase 1 | Pending |
-| CMD-04 | Phase 1 | Pending |
+| CMD-03 | Phase 1 | Complete |
+| CMD-04 | Phase 1 | Complete |
 | CMD-05 | Phase 1 | Pending |
 | CLIP-01 | Phase 1 | Complete |
 | CLIP-02 | Phase 1 | Complete |

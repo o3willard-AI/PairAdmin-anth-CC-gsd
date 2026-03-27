@@ -2,8 +2,8 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
-status: Ready to execute
-last_updated: "2026-03-27T07:16:23.796Z"
+status: Awaiting human verification
+last_updated: "2026-03-27T07:41:44Z"
 progress:
   total_phases: 7
   completed_phases: 0
@@ -18,21 +18,21 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-25)
 
 **Core value:** The AI sees exactly what you see in the terminal — automatically, without copy/paste — so assistance is always in context.
-**Current focus:** Phase 1 in progress — plans 01-01, 01-02, 01-03 complete, advancing to plan 04
+**Current focus:** Phase 1 — plan 01-04 tasks 1 and 2 complete, awaiting human visual verification (Task 3 checkpoint)
 
 ## Current Position
 
 **Milestone:** v1.0 — Linux release
 **Active phase:** 01-application-shell-ui-foundation
 **Current plan:** 04 of 4
-**Next action:** Execute plan 01-04
-**Last session:** 2026-03-27 — Completed 01-02-PLAN.md and 01-03-PLAN.md
+**Next action:** Human visual verification of complete Phase 1 UI (run `wails dev`, inspect layout, test chat echo and clipboard)
+**Last session:** 2026-03-27 — Executed 01-04 Tasks 1+2 (chat components + command sidebar + App wiring), stopped at Task 3 checkpoint
 
 ## Progress
 
 | Phase | Status |
 |-------|--------|
-| 1 — Application Shell | 🔵 In progress (2/4 plans complete) |
+| 1 — Application Shell | 🔵 In progress (3/4 plans complete, plan 4 awaiting verification) |
 | 2 — LLM Gateway | ⬜ Not started |
 | 3 — tmux Capture | ⬜ Not started |
 | 4 — AT-SPI2 Adapters | ⬜ Not started |
@@ -59,6 +59,9 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 - **CanvasAddon must load after term.open()** — enforced in TerminalPreview (plan 01-02)
 - **Injectable lookPath var** for exec.LookPath enables CommandService Wayland tests without interfaces (01-03)
 - **main.go OnStartup closure** calls app.startup and commands.Startup in sequence to support multiple service lifetimes (01-03)
+- **TooltipTrigger asChild not used** — @base-ui/react TooltipTrigger renders its own button element; nesting a `<button>` inside via asChild creates invalid HTML (button-in-button); pass className/onClick directly on TooltipTrigger instead
+- **useWailsClipboard dynamic import** — wailsjs/go bindings are gitignored (generated at wails dev runtime); dynamic import with navigator.clipboard fallback avoids build-time failure
+- **@testing-library/dom required** — missing peer dep for @testing-library/react; must be installed explicitly
 
 ## Research Completed
 
@@ -84,4 +87,4 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 
 ---
 *Initialized: 2026-03-25*
-*Last updated: 2026-03-27 after completing plans 01-02 and 01-03*
+*Last updated: 2026-03-27 after executing 01-04 Tasks 1+2, stopped at Task 3 human-verify checkpoint*

@@ -6,7 +6,7 @@
 
 ---
 
-## Phase 1 — Application Shell & UI Foundation
+## Phase 1: Application Shell & UI Foundation
 
 **Goal:** A working Wails + React desktop app with the three-column layout, mock terminal tabs, static chat UI, and clipboard support. No real terminal capture or LLM yet — but the skeleton is interactive and correct.
 
@@ -28,7 +28,7 @@
 
 ---
 
-## Phase 2 — LLM Gateway & Streaming Chat
+## Phase 2: LLM Gateway & Streaming Chat
 
 **Goal:** Real AI responses. The user can type a question, it goes to a real LLM, and the response streams back token-by-token into the chat area with working code block highlighting and "Copy to Terminal" buttons.
 
@@ -51,7 +51,7 @@
 
 ---
 
-## Phase 3 — tmux Terminal Capture
+## Phase 3: tmux Terminal Capture
 
 **Goal:** Automatic terminal content capture from tmux. No more mock data — the terminal preview pane shows live tmux output and every chat message is prefixed with real terminal context.
 
@@ -71,7 +71,7 @@
 
 ---
 
-## Phase 4 — Linux GUI Terminal Adapters (AT-SPI2)
+## Phase 4: Linux GUI Terminal Adapters (AT-SPI2)
 
 **Goal:** Capture content from GNOME Terminal and Konsole for users not running tmux.
 
@@ -92,7 +92,7 @@
 
 ---
 
-## Phase 5 — Settings, Configuration & Slash Commands
+## Phase 5: Settings, Configuration & Slash Commands
 
 **Goal:** A fully configurable application. Users can switch providers, manage API keys, customize prompts, set hotkeys, and use all slash commands.
 
@@ -114,7 +114,7 @@
 
 ---
 
-## Phase 6 — Security Hardening
+## Phase 6: Security Hardening
 
 **Goal:** Production-grade security: in-memory credential protection, full audit log, response-side filtering, and Ollama remote-host guard.
 
@@ -133,7 +133,7 @@
 
 ---
 
-## Phase 7 — Distribution & Launch
+## Phase 7: Distribution & Launch
 
 **Goal:** Installable Linux packages and a clean public release.
 

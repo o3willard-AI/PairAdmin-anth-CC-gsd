@@ -5,21 +5,21 @@
 See: .planning/PROJECT.md (updated 2026-03-25)
 
 **Core value:** The AI sees exactly what you see in the terminal — automatically, without copy/paste — so assistance is always in context.
-**Current focus:** Phase 1 in progress — plan 01 complete, advancing to plan 02
+**Current focus:** Phase 1 in progress — plan 02 complete, advancing to plan 03
 
 ## Current Position
 
 **Milestone:** v1.0 — Linux release
 **Active phase:** 01-application-shell-ui-foundation
-**Current plan:** 02 of 4
-**Next action:** Execute plan 01-02
-**Last session:** 2026-03-27 — Completed 01-01-PLAN.md
+**Current plan:** 03 of 4
+**Next action:** Execute plan 01-03
+**Last session:** 2026-03-27 — Completed 01-02-PLAN.md
 
 ## Progress
 
 | Phase | Status |
 |-------|--------|
-| 1 — Application Shell | 🔵 In progress (1/4 plans complete) |
+| 1 — Application Shell | 🔵 In progress (2/4 plans complete) |
 | 2 — LLM Gateway | ⬜ Not started |
 | 3 — tmux Capture | ⬜ Not started |
 | 4 — AT-SPI2 Adapters | ⬜ Not started |
@@ -42,6 +42,8 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 - **react-shiki** for syntax highlighting (streaming delay prop)
 - **gitleaks** as credential pattern foundation
 - **ANSI stripping is Stage 1** of filter pipeline (security, not cosmetic)
+- **vitest 4.x constructor mocks** require class syntax, not vi.fn().mockImplementation
+- **CanvasAddon must load after term.open()** — enforced in TerminalPreview (plan 01-02)
 
 ## Research Completed
 
@@ -67,4 +69,4 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 
 ---
 *Initialized: 2026-03-25*
-*Last updated: 2026-03-27 after completing plan 01-01*
+*Last updated: 2026-03-27 after completing plan 01-02*

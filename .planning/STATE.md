@@ -5,15 +5,15 @@
 See: .planning/PROJECT.md (updated 2026-03-25)
 
 **Core value:** The AI sees exactly what you see in the terminal — automatically, without copy/paste — so assistance is always in context.
-**Current focus:** Phase 1 in progress — plan 01 complete, advancing to plan 02
+**Current focus:** Phase 1 in progress — plans 01 and 03 complete, advancing to plan 04
 
 ## Current Position
 
 **Milestone:** v1.0 — Linux release
 **Active phase:** 01-application-shell-ui-foundation
-**Current plan:** 02 of 4
-**Next action:** Execute plan 01-02
-**Last session:** 2026-03-27 — Completed 01-01-PLAN.md
+**Current plan:** 04 of 4
+**Next action:** Execute plan 01-04
+**Last session:** 2026-03-27 — Completed 01-03-PLAN.md
 
 ## Progress
 
@@ -42,6 +42,8 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 - **react-shiki** for syntax highlighting (streaming delay prop)
 - **gitleaks** as credential pattern foundation
 - **ANSI stripping is Stage 1** of filter pipeline (security, not cosmetic)
+- **Injectable lookPath var** for exec.LookPath enables CommandService Wayland tests without interfaces (01-03)
+- **main.go OnStartup closure** calls app.startup and commands.Startup in sequence to support multiple service lifetimes (01-03)
 
 ## Research Completed
 
@@ -67,4 +69,4 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 
 ---
 *Initialized: 2026-03-25*
-*Last updated: 2026-03-27 after completing plan 01-01*
+*Last updated: 2026-03-27 after completing plan 01-03*

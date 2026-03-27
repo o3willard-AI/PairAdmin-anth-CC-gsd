@@ -8,8 +8,8 @@
 ### Application Shell
 
 - [ ] **SHELL-01**: Application launches as a native desktop window using Wails v2 with React + TypeScript frontend
-- [ ] **SHELL-02**: Three-column layout renders correctly: terminal tabs (left, 160px fixed), chat area (center, flexible), command sidebar (right, 220px collapsible)
-- [ ] **SHELL-03**: Status bar displays active model, connection status, token usage, and settings button
+- [x] **SHELL-02**: Three-column layout renders correctly: terminal tabs (left, 160px fixed), chat area (center, flexible), command sidebar (right, 220px collapsible)
+- [x] **SHELL-03**: Status bar displays active model, connection status, token usage, and settings button
 - [ ] **SHELL-04**: Application builds and runs on Ubuntu 22.04+ with `libwebkit2gtk-4.1-dev` and `-tags webkit2_41`
 
 ### Terminal Capture — tmux
@@ -67,8 +67,8 @@
 
 ### Clipboard & Command Execution
 
-- [ ] **CLIP-01**: "Copy to Terminal" button copies the command to the system clipboard
-- [ ] **CLIP-02**: Application detects Wayland display server at startup and warns if `wl-clipboard` is not installed
+- [x] **CLIP-01**: "Copy to Terminal" button copies the command to the system clipboard
+- [x] **CLIP-02**: Application detects Wayland display server at startup and warns if `wl-clipboard` is not installed
 - [ ] **CLIP-03**: Clipboard contents copied by PairAdmin are automatically cleared after 60 seconds (configurable)
 
 ### Configuration & Settings
@@ -145,8 +145,8 @@
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | SHELL-01 | Phase 1 | Pending |
-| SHELL-02 | Phase 1 | Pending |
-| SHELL-03 | Phase 1 | Pending |
+| SHELL-02 | Phase 1 | Complete |
+| SHELL-03 | Phase 1 | Complete |
 | SHELL-04 | Phase 1 | Pending |
 | CHAT-01 | Phase 1 | Pending |
 | CHAT-05 | Phase 1 | Pending |
@@ -156,8 +156,8 @@
 | CMD-03 | Phase 1 | Pending |
 | CMD-04 | Phase 1 | Pending |
 | CMD-05 | Phase 1 | Pending |
-| CLIP-01 | Phase 1 | Pending |
-| CLIP-02 | Phase 1 | Pending |
+| CLIP-01 | Phase 1 | Complete |
+| CLIP-02 | Phase 1 | Complete |
 | FILT-01 | Phase 2 | Pending |
 | FILT-02 | Phase 2 | Pending |
 | FILT-03 | Phase 2 | Pending |

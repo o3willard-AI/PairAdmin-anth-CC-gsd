@@ -18,7 +18,7 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-25)
 
 **Core value:** The AI sees exactly what you see in the terminal — automatically, without copy/paste — so assistance is always in context.
-**Current focus:** Phase 1 in progress — plans 01-02 and 01-03 complete, advancing to plan 04
+**Current focus:** Phase 1 in progress — plans 01-01, 01-02, 01-03 complete, advancing to plan 04
 
 ## Current Position
 
@@ -57,6 +57,8 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 - **ANSI stripping is Stage 1** of filter pipeline (security, not cosmetic)
 - **vitest 4.x constructor mocks** require class syntax, not vi.fn().mockImplementation
 - **CanvasAddon must load after term.open()** — enforced in TerminalPreview (plan 01-02)
+- **Injectable lookPath var** for exec.LookPath enables CommandService Wayland tests without interfaces (01-03)
+- **main.go OnStartup closure** calls app.startup and commands.Startup in sequence to support multiple service lifetimes (01-03)
 
 ## Research Completed
 
@@ -82,4 +84,4 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 
 ---
 *Initialized: 2026-03-25*
-*Last updated: 2026-03-27 after completing plan 01-02*
+*Last updated: 2026-03-27 after completing plans 01-02 and 01-03*

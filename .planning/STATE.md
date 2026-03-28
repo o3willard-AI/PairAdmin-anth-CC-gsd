@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
-current_plan: 03-01 complete
+current_plan: 03-01 + 03-02 complete
 status: In progress
-last_updated: "2026-03-28T17:12:40Z"
+last_updated: "2026-03-28T17:20:00Z"
 progress:
   total_phases: 7
   completed_phases: 2
   total_plans: 11
-  completed_plans: 9
+  completed_plans: 10
 ---
 
 # Project State: PairAdmin v2.0
@@ -25,9 +25,9 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 
 **Milestone:** v1.0 — Linux release
 **Active phase:** 03-tmux-terminal-capture
-**Current plan:** 03-01 complete (TerminalService backend)
-**Next action:** 03-02 — Wire frontend to consume terminal:update and terminal:tabs events
-**Last session:** 2026-03-28T17:12:40Z
+**Current plan:** 03-02 complete — Wave 1 done; 03-03 (UI wiring) next
+**Next action:** 03-03 — Wire TerminalPreview, no-tmux empty state, mount hook in AppLayout
+**Last session:** 2026-03-28T17:20:00Z
 
 ## Progress
 

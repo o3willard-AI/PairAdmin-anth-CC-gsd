@@ -14,12 +14,12 @@
 
 ### Terminal Capture — tmux
 
-- [ ] **TMUX-01**: Application discovers all active tmux sessions and panes on startup via `tmux list-panes -a`
-- [ ] **TMUX-02**: Terminal content is captured from each pane via `tmux capture-pane -p` at 500ms polling interval
-- [ ] **TMUX-03**: New tmux sessions/panes are detected automatically without user action
-- [ ] **TMUX-04**: Closed tmux sessions are detected and corresponding tabs are marked inactive
-- [ ] **TMUX-05**: FNV64a hash deduplication prevents sending unchanged content to the LLM pipeline
-- [ ] **TMUX-06**: Each tmux pane maps to an isolated PairAdmin tab with independent chat history and context
+- [x] **TMUX-01**: Application discovers all active tmux sessions and panes on startup via `tmux list-panes -a`
+- [x] **TMUX-02**: Terminal content is captured from each pane via `tmux capture-pane -p` at 500ms polling interval
+- [x] **TMUX-03**: New tmux sessions/panes are detected automatically without user action
+- [x] **TMUX-04**: Closed tmux sessions are detected and corresponding tabs are marked inactive
+- [x] **TMUX-05**: FNV64a hash deduplication prevents sending unchanged content to the LLM pipeline
+- [x] **TMUX-06**: Each tmux pane maps to an isolated PairAdmin tab with independent chat history and context
 
 ### Terminal Capture — Linux GUI (AT-SPI2)
 
@@ -173,12 +173,12 @@
 | CHAT-02 | Phase 2 | Complete |
 | CHAT-03 | Phase 2 | Complete |
 | CHAT-04 | Phase 2 | Complete |
-| TMUX-01 | Phase 3 | Pending |
-| TMUX-02 | Phase 3 | Pending |
-| TMUX-03 | Phase 3 | Pending |
-| TMUX-04 | Phase 3 | Pending |
-| TMUX-05 | Phase 3 | Pending |
-| TMUX-06 | Phase 3 | Pending |
+| TMUX-01 | Phase 3 | Complete |
+| TMUX-02 | Phase 3 | Complete |
+| TMUX-03 | Phase 3 | Complete |
+| TMUX-04 | Phase 3 | Complete |
+| TMUX-05 | Phase 3 | Complete |
+| TMUX-06 | Phase 3 | Complete |
 | ATSPI-01 | Phase 4 | Pending |
 | ATSPI-02 | Phase 4 | Pending |
 | ATSPI-03 | Phase 4 | Pending |

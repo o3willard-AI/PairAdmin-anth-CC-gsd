@@ -73,7 +73,7 @@ Plans:
 
 **Requirements:** TMUX-01–06
 
-**Plans:** 3 plans
+**Plans:** 0/3 plans executed
 
 Plans:
 - [ ] 03-01-PLAN.md — Go TerminalService: tmux discovery, capture, 500ms polling, FNV-64a dedup, bounded concurrency, Wails event emission

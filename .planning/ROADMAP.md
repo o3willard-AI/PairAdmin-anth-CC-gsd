@@ -73,6 +73,13 @@ Plans:
 
 **Requirements:** TMUX-01–06
 
+**Plans:** 3 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — Go TerminalService: tmux discovery, capture, 500ms polling, FNV-64a dedup, bounded concurrency, Wails event emission
+- [ ] 03-02-PLAN.md — Frontend: terminalStore addTab/removeTab/clearTabs actions, useTerminalCapture Wails event hook
+- [ ] 03-03-PLAN.md — UI wiring: TerminalPreview live content + no-tmux empty state, AppLayout hook mount, human verification
+
 **Key deliverables:**
 - `TerminalAdapter` interface: `IsAvailable()`, `Discover() []PaneID`, `Capture(PaneID) (string, error)`, `Close()`
 - tmux adapter: `tmux list-panes -a -F "..."` for discovery; `tmux capture-pane -p -t <pane-id>` for content; targets stable pane ID (`%3` format) not session:window.pane
@@ -181,4 +188,4 @@ Plans:
 | 6 | Security Hardening | memguard, audit log, response filtering |
 | 7 | Distribution | .deb, .rpm, AppImage, clean install |
 
-**Status:** Phase 2 planned — ready for execution
+**Status:** Phase 3 planned — ready for execution

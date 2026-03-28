@@ -30,29 +30,29 @@
 
 ### Context & Filtering
 
-- [ ] **FILT-01**: ANSI/VT100 escape sequences are stripped from all terminal content before any processing (security requirement — prevents injection via invisible sequences)
-- [ ] **FILT-02**: Built-in credential filter detects and redacts: AWS access keys, AWS secret keys, GitHub tokens, GCP service account keys, generic API keys, SSH private key blocks, database DSN passwords, bearer tokens, password prompt lines
-- [ ] **FILT-03**: Filtered/redacted content is what gets sent to the LLM — original unredacted content is never transmitted to cloud APIs
+- [x] **FILT-01**: ANSI/VT100 escape sequences are stripped from all terminal content before any processing (security requirement — prevents injection via invisible sequences)
+- [x] **FILT-02**: Built-in credential filter detects and redacts: AWS access keys, AWS secret keys, GitHub tokens, GCP service account keys, generic API keys, SSH private key blocks, database DSN passwords, bearer tokens, password prompt lines
+- [x] **FILT-03**: Filtered/redacted content is what gets sent to the LLM — original unredacted content is never transmitted to cloud APIs
 - [ ] **FILT-04**: User can add custom filter patterns via `/filter add <name> <regex> <action>` slash command
 - [ ] **FILT-05**: User can list and remove custom filter patterns via `/filter list` and `/filter remove <name>`
 - [ ] **FILT-06**: Terminal content is truncated to fit within the active provider's context window; most recent content is prioritized
-- [ ] **FILT-07**: Token count and context usage is displayed in the status bar
+- [x] **FILT-07**: Token count and context usage is displayed in the status bar
 
 ### LLM Gateway
 
-- [ ] **LLM-01**: OpenAI provider is implemented using `github.com/openai/openai-go/v3`; supports streaming chat completions
-- [ ] **LLM-02**: Anthropic provider is implemented using `github.com/anthropics/anthropic-sdk-go`; system prompt is handled as top-level field (not message role)
-- [ ] **LLM-03**: Ollama provider is implemented using `github.com/ollama/ollama/api`; validates that `OLLAMA_HOST` is a localhost address before use
-- [ ] **LLM-04**: LM Studio and llama.cpp are supported by reusing the OpenAI adapter with a configurable base URL
-- [ ] **LLM-05**: All providers implement a common channel-based streaming interface: `Stream() (<-chan StreamChunk, error)`
-- [ ] **LLM-06**: Streaming responses are delivered to the React frontend via Wails EventsEmit with sequence numbers and 50ms batching (mitigates Wails Issue #2759)
-- [ ] **LLM-07**: When Ollama is selected, no terminal content is transmitted over any network interface
+- [x] **LLM-01**: OpenAI provider is implemented using `github.com/openai/openai-go/v3`; supports streaming chat completions
+- [x] **LLM-02**: Anthropic provider is implemented using `github.com/anthropics/anthropic-sdk-go`; system prompt is handled as top-level field (not message role)
+- [x] **LLM-03**: Ollama provider is implemented using `github.com/ollama/ollama/api`; validates that `OLLAMA_HOST` is a localhost address before use
+- [x] **LLM-04**: LM Studio and llama.cpp are supported by reusing the OpenAI adapter with a configurable base URL
+- [x] **LLM-05**: All providers implement a common channel-based streaming interface: `Stream() (<-chan StreamChunk, error)`
+- [x] **LLM-06**: Streaming responses are delivered to the React frontend via Wails EventsEmit with sequence numbers and 50ms batching (mitigates Wails Issue #2759)
+- [x] **LLM-07**: When Ollama is selected, no terminal content is transmitted over any network interface
 
 ### Chat Interface
 
 - [x] **CHAT-01**: User can type a question in the chat input and send it (Enter to send, Shift+Enter for newline)
-- [ ] **CHAT-02**: Every outgoing message includes the current terminal context (filtered) assembled as a system prompt prefix
-- [ ] **CHAT-03**: AI responses stream token-by-token into the chat area as they arrive
+- [x] **CHAT-02**: Every outgoing message includes the current terminal context (filtered) assembled as a system prompt prefix
+- [x] **CHAT-03**: AI responses stream token-by-token into the chat area as they arrive
 - [ ] **CHAT-04**: AI-suggested commands are rendered in syntax-highlighted code blocks (react-shiki) with a "Copy to Terminal" button
 - [ ] **CHAT-05**: Chat history is isolated per terminal tab; switching tabs shows that tab's conversation only
 - [ ] **CHAT-06**: `/clear` command clears chat history for the current tab
@@ -158,20 +158,20 @@
 | CMD-05 | Phase 1 | Pending |
 | CLIP-01 | Phase 1 | Complete |
 | CLIP-02 | Phase 1 | Complete |
-| FILT-01 | Phase 2 | Pending |
-| FILT-02 | Phase 2 | Pending |
-| FILT-03 | Phase 2 | Pending |
+| FILT-01 | Phase 2 | Complete |
+| FILT-02 | Phase 2 | Complete |
+| FILT-03 | Phase 2 | Complete |
 | FILT-06 | Phase 2 | Pending |
-| FILT-07 | Phase 2 | Pending |
-| LLM-01 | Phase 2 | Pending |
-| LLM-02 | Phase 2 | Pending |
-| LLM-03 | Phase 2 | Pending |
-| LLM-04 | Phase 2 | Pending |
-| LLM-05 | Phase 2 | Pending |
-| LLM-06 | Phase 2 | Pending |
-| LLM-07 | Phase 2 | Pending |
-| CHAT-02 | Phase 2 | Pending |
-| CHAT-03 | Phase 2 | Pending |
+| FILT-07 | Phase 2 | Complete |
+| LLM-01 | Phase 2 | Complete |
+| LLM-02 | Phase 2 | Complete |
+| LLM-03 | Phase 2 | Complete |
+| LLM-04 | Phase 2 | Complete |
+| LLM-05 | Phase 2 | Complete |
+| LLM-06 | Phase 2 | Complete |
+| LLM-07 | Phase 2 | Complete |
+| CHAT-02 | Phase 2 | Complete |
+| CHAT-03 | Phase 2 | Complete |
 | CHAT-04 | Phase 2 | Pending |
 | TMUX-01 | Phase 3 | Pending |
 | TMUX-02 | Phase 3 | Pending |

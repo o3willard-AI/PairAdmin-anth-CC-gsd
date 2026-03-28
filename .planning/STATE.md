@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
-current_plan: 04 of 4
-status: Phase 1 complete — ready for Phase 2
-last_updated: "2026-03-27T17:41:39.806Z"
+current_plan: 02 of 4
+status: Phase 2 in progress — 02-01 complete (LLM gateway Go side)
+last_updated: "2026-03-28T05:29:00Z"
 progress:
   total_phases: 7
   completed_phases: 1
-  total_plans: 4
-  completed_plans: 4
+  total_plans: 8
+  completed_plans: 5
 ---
 
 # Project State: PairAdmin v2.0
@@ -24,17 +24,17 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 ## Current Position
 
 **Milestone:** v1.0 — Linux release
-**Active phase:** 01-application-shell-ui-foundation
-**Current plan:** 04 of 4
-**Next action:** Begin Phase 2 — LLM Gateway (streaming chat responses, model selection, token counting)
-**Last session:** 2026-03-27T17:41:39.800Z
+**Active phase:** 02-llm-gateway-streaming-chat
+**Current plan:** 02 of 4
+**Next action:** Plan 02-02 — React streaming chat UI (useLLMStream hook, ChatPane wiring)
+**Last session:** 2026-03-28T05:29:00Z
 
 ## Progress
 
 | Phase | Status |
 |-------|--------|
 | 1 — Application Shell | green Complete (4/4 plans) |
-| 2 — LLM Gateway | ⬜ Not started |
+| 2 — LLM Gateway | 🟡 In progress (1/4 plans) |
 | 3 — tmux Capture | ⬜ Not started |
 | 4 — AT-SPI2 Adapters | ⬜ Not started |
 | 5 — Settings & Config | ⬜ Not started |
@@ -63,6 +63,10 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 - **TooltipTrigger asChild not used** — @base-ui/react TooltipTrigger renders its own button element; nesting a `<button>` inside via asChild creates invalid HTML (button-in-button); pass className/onClick directly on TooltipTrigger instead
 - **useWailsClipboard dynamic import** — wailsjs/go bindings are gitignored (generated at wails dev runtime); dynamic import with navigator.clipboard fallback avoids build-time failure
 - **@testing-library/dom required** — missing peer dep for @testing-library/react; must be installed explicitly
+- **Anthropic buildParams internal test** — unexported method requires package llm (not package llm_test) for white-box testing
+- **Ollama localhost-only enforcement** — OLLAMA_HOST must be localhost/127.0.0.1/::1; validated in NewOllamaProvider to prevent remote data leakage
+- **OpenAI adapter covers 3 providers** — OpenRouter (custom BaseURL + key) and LM Studio (local BaseURL + empty key) reuse OpenAIProvider; no extra files needed
+- **50ms Wails event batching** — mitigates Issue #2759 out-of-order delivery; sequence numbers allow frontend reordering
 
 ## Research Completed
 
@@ -88,4 +92,4 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 
 ---
 *Initialized: 2026-03-25*
-*Last updated: 2026-03-27 — 01-04 complete, human visual verification approved, Phase 1 done*
+*Last updated: 2026-03-28 — 02-01 complete, LLM gateway Go side (provider interface + 5 adapters + LLMService)*

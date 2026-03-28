@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
-current_plan: 04 of 4
-status: Phase 1 complete — ready for Phase 2
-last_updated: "2026-03-27T17:41:39.806Z"
+current_plan: 02 of 4
+status: Phase 2 in progress — 02-02 complete (filter pipeline)
+last_updated: "2026-03-27T18:05:54Z"
 progress:
   total_phases: 7
   completed_phases: 1
-  total_plans: 4
-  completed_plans: 4
+  total_plans: 8
+  completed_plans: 5
 ---
 
 # Project State: PairAdmin v2.0
@@ -24,17 +24,17 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 ## Current Position
 
 **Milestone:** v1.0 — Linux release
-**Active phase:** 01-application-shell-ui-foundation
-**Current plan:** 04 of 4
-**Next action:** Begin Phase 2 — LLM Gateway (streaming chat responses, model selection, token counting)
-**Last session:** 2026-03-27T17:41:39.800Z
+**Active phase:** 02-llm-gateway-streaming-chat
+**Current plan:** 02 of 4
+**Next action:** Continue Phase 2 — Plan 03 (LLM provider client / streaming)
+**Last session:** 2026-03-27T18:05:54Z
 
 ## Progress
 
 | Phase | Status |
 |-------|--------|
 | 1 — Application Shell | green Complete (4/4 plans) |
-| 2 — LLM Gateway | ⬜ Not started |
+| 2 — LLM Gateway | 🟡 In progress (2/4 plans) |
 | 3 — tmux Capture | ⬜ Not started |
 | 4 — AT-SPI2 Adapters | ⬜ Not started |
 | 5 — Settings & Config | ⬜ Not started |
@@ -54,7 +54,8 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 - **xterm.js** for terminal preview (direct writes, not React state)
 - **Zustand + Immer** for frontend state (3 stores: chat, terminal, commands)
 - **react-shiki** for syntax highlighting (streaming delay prop)
-- **gitleaks** as credential pattern foundation
+- **gitleaks** as credential pattern foundation (regex-only mode in filter package — gitleaks not added as go.mod dep; comprehensive regex patterns cover required credential formats)
+- **ANSIFilter uses comprehensive regex** (not go-ansi-parser Cleanse) — library only handles SGR color codes; cursor movement and OSC sequences require full regex approach
 - **ANSI stripping is Stage 1** of filter pipeline (security, not cosmetic)
 - **vitest 4.x constructor mocks** require class syntax, not vi.fn().mockImplementation
 - **CanvasAddon must load after term.open()** — enforced in TerminalPreview (plan 01-02)
@@ -88,4 +89,4 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 
 ---
 *Initialized: 2026-03-25*
-*Last updated: 2026-03-27 — 01-04 complete, human visual verification approved, Phase 1 done*
+*Last updated: 2026-03-27 — 02-02 complete, filter pipeline (ANSI + credential) implemented with full TDD*

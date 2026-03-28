@@ -14,15 +14,18 @@ The AI sees exactly what you see in the terminal — automatically, without copy
 
 (None yet — ship to validate)
 
+### Validated
+
+- [x] Real-time AI chat with full terminal context injected into every message — Validated in Phase 2: LLM Gateway
+- [x] Pre-LLM sensitive data filtering (passwords, API keys, tokens, private keys) — Validated in Phase 2: filter pipeline (ANSI strip + credential redaction)
+- [x] Multi-provider LLM support (OpenAI, Anthropic, Ollama/local) — Validated in Phase 2: 5 adapters (OpenAI, Anthropic, Ollama, OpenRouter, LM Studio); live-tested against LM Studio
+
 ### Active
 
 - [ ] Automatic terminal content capture via platform-native APIs (no manual copy/paste)
-- [ ] Real-time AI chat with full terminal context injected into every message
 - [ ] One-click "Copy to Terminal" to push suggested commands to clipboard
 - [ ] Multi-terminal tab management with isolated context per session
 - [ ] Command history sidebar (reverse-chronological, click-to-reuse)
-- [ ] Pre-LLM sensitive data filtering (passwords, API keys, tokens, private keys)
-- [ ] Multi-provider LLM support (OpenAI, Anthropic, Ollama/local)
 - [ ] Settings dialog (provider config, prompt extensions, hotkeys, appearance)
 - [ ] Slash command interface (/model, /filter, /context, /clear, /export, /rename)
 - [ ] Secure API key storage via OS keychain
@@ -62,7 +65,7 @@ The AI sees exactly what you see in the terminal — automatically, without copy
 | React + TypeScript over Vue | Wails generates TypeScript bindings; TS+React maximizes type safety at the Go↔JS boundary; stronger ecosystem for streaming chat UI patterns | — Pending |
 | Linux-first scope for v1 | macOS hardware unavailable; Windows per-iteration VM QA impractical; tmux + AT-SPI2 covers a complete, shippable target audience | — Pending |
 | tmux as primary adapter | No special permissions, works over SSH, reliable subprocess API; covers the majority of serious sysadmin workflows | — Pending |
-| Pre-LLM filter pipeline mandatory | Terminal buffers routinely contain credentials; filtering cannot be optional or user-skippable for cloud providers | — Pending |
+| Pre-LLM filter pipeline mandatory | Terminal buffers routinely contain credentials; filtering cannot be optional or user-skippable for cloud providers | Validated Phase 2 — ANSI strip + credential regex pipeline in `services/llm/filter/` |
 | OS keychain for API key storage | Plaintext config files are unacceptable for credentials; OS keychain is the correct abstraction across all platforms | — Pending |
 
 ## Evolution
@@ -83,4 +86,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-25 after initialization*
+*Last updated: 2026-03-28 — Phase 2 complete: LLM gateway live (streaming confirmed vs LM Studio), filter pipeline validated*

@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
-current_plan: Not started
-status: Ready to plan
-last_updated: "2026-03-28T07:29:58.123Z"
+current_plan: 03-01 complete
+status: In progress
+last_updated: "2026-03-28T17:12:40Z"
 progress:
   total_phases: 7
   completed_phases: 2
-  total_plans: 8
-  completed_plans: 8
+  total_plans: 11
+  completed_plans: 9
 ---
 
 # Project State: PairAdmin v2.0
@@ -19,15 +19,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-25)
 
 **Core value:** The AI sees exactly what you see in the terminal — automatically, without copy/paste — so assistance is always in context.
-**Current focus:** Phase 02 — llm-gateway-streaming-chat
+**Current focus:** Phase 03 — tmux-terminal-capture
 
 ## Current Position
 
 **Milestone:** v1.0 — Linux release
-**Active phase:** 03-tmux-capture (next)
-**Current plan:** Not started
-**Next action:** Begin Phase 3 — tmux capture and terminal context pipeline
-**Last session:** 2026-03-28T07:11:30.059Z
+**Active phase:** 03-tmux-terminal-capture
+**Current plan:** 03-01 complete (TerminalService backend)
+**Next action:** 03-02 — Wire frontend to consume terminal:update and terminal:tabs events
+**Last session:** 2026-03-28T17:12:40Z
 
 ## Progress
 
@@ -35,7 +35,7 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 |-------|--------|
 | 1 — Application Shell | green Complete (4/4 plans) |
 | 2 — LLM Gateway | green Complete (4/4 plans) |
-| 3 — tmux Capture | ⬜ Not started |
+| 3 — tmux Capture | 🔄 In progress (1/3 plans) |
 | 4 — AT-SPI2 Adapters | ⬜ Not started |
 | 5 — Settings & Config | ⬜ Not started |
 | 6 — Security Hardening | ⬜ Not started |
@@ -74,6 +74,9 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 - **LMSTUDIO_HOST env var** — allows remote LM Studio endpoints (not just localhost:1234); added to Config struct and LoadConfig() (02-04)
 - **react-markdown + react-shiki needed npm install** — both packages were in package.json from plan author but not installed; npm install required as part of 02-04 execution
 - **Human verification confirmed live streaming** — LM Studio qwen/qwen3.5-35b-a3b at 192.168.101.56 returned 352 and 1651 chunk counts; streaming chat end-to-end verified (02-04)
+- **TerminalService emits post-WaitGroup** — capture goroutines collect results into slice; emitFn called from main goroutine after wg.Wait(); avoids EventsEmit thread-safety concerns (03-01)
+- **capturePane filter degradation** — if filter init/apply fails, returns unfiltered content rather than propagating error; terminal availability > filter failure at runtime (03-01)
+- **Injectable emitFn field** — TerminalService.emitFn allows test isolation of Wails events without runtime; matches injectable lookPath/execCommand pattern (03-01)
 
 ## Research Completed
 
@@ -99,4 +102,4 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 
 ---
 *Initialized: 2026-03-25*
-*Last updated: 2026-03-28 — Phase 2 complete: 02-01 (LLM gateway + 5 adapters) + 02-02 (filter pipeline) + 02-03 (streaming state layer) + 02-04 (end-to-end wiring, human-verified)*
+*Last updated: 2026-03-28 — Phase 3 in progress: 03-01 complete (TerminalService backend — tmux discovery, capture, FNV-64a dedup, semaphore-4 concurrency, Wails event emission)*

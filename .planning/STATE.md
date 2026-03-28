@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
-current_plan: 02 of 4
-status: Phase 2 in progress — Wave 1 complete (02-01 LLM gateway + 02-02 filter pipeline)
-last_updated: "2026-03-28T05:35:00Z"
+current_plan: 03 of 4
+status: Phase 2 in progress — Wave 2 frontend streaming layer (02-03 complete)
+last_updated: "2026-03-27T22:53:00Z"
 progress:
   total_phases: 7
   completed_phases: 1
   total_plans: 8
-  completed_plans: 5
+  completed_plans: 6
 ---
 
 # Project State: PairAdmin v2.0
@@ -25,16 +25,16 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 
 **Milestone:** v1.0 — Linux release
 **Active phase:** 02-llm-gateway-streaming-chat
-**Current plan:** 02 of 4
-**Next action:** Wave 2 — Frontend streaming layer (02-03), then full wiring (02-04)
-**Last session:** 2026-03-28T05:35:00Z
+**Current plan:** 03 of 4 (completed 02-03)
+**Next action:** Wave 2 continued — ChatPane wiring (02-04)
+**Last session:** 2026-03-27T22:53:00Z
 
 ## Progress
 
 | Phase | Status |
 |-------|--------|
 | 1 — Application Shell | green Complete (4/4 plans) |
-| 2 — LLM Gateway | 🟡 In progress (2/4 plans) |
+| 2 — LLM Gateway | 🟡 In progress (3/4 plans) |
 | 3 — tmux Capture | ⬜ Not started |
 | 4 — AT-SPI2 Adapters | ⬜ Not started |
 | 5 — Settings & Config | ⬜ Not started |
@@ -68,6 +68,9 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 - **Ollama localhost-only enforcement** — OLLAMA_HOST must be localhost/127.0.0.1/::1; validated in NewOllamaProvider to prevent remote data leakage
 - **OpenAI adapter covers 3 providers** — OpenRouter (custom BaseURL + key) and LM Studio (local BaseURL + empty key) reuse OpenAIProvider; no extra files needed
 - **50ms Wails event batching** — mitigates Issue #2759 out-of-order delivery; sequence numbers allow frontend reordering
+- **wailsjs/runtime stub committed with .gitignore exception** — `/* @vite-ignore */` only suppresses Vite warnings, not vitest import analysis; stub JS file at `frontend/wailsjs/runtime/runtime.js` must physically exist for vitest to resolve dynamic import path
+- **vi.mock path must match resolved absolute path** — test at `__tests__/` must use `../../../wailsjs/runtime/runtime` to reach same absolute path that hook's `../../wailsjs/runtime/runtime` resolves to
+- **termRefsMap outside Zustand** — xterm Terminal objects are not serializable; store exposes setTermRef/getTermRef as methods backed by external Map, no re-render on terminal ref changes
 
 ## Research Completed
 

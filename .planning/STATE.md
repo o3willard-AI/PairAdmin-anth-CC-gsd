@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
-current_plan: 03 of 4
-status: Phase 2 in progress — Wave 2 frontend streaming layer (02-03 complete)
-last_updated: "2026-03-27T22:53:00Z"
+current_plan: 04 of 4 (completed 02-04)
+status: Phase 2 complete — full LLM streaming chat end-to-end, human-verified against live LM Studio
+last_updated: "2026-03-28T07:11:30.065Z"
 progress:
   total_phases: 7
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 8
-  completed_plans: 6
+  completed_plans: 8
 ---
 
 # Project State: PairAdmin v2.0
@@ -24,17 +24,17 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 ## Current Position
 
 **Milestone:** v1.0 — Linux release
-**Active phase:** 02-llm-gateway-streaming-chat
-**Current plan:** 03 of 4 (completed 02-03)
-**Next action:** Wave 2 continued — ChatPane wiring (02-04)
-**Last session:** 2026-03-27T22:53:00Z
+**Active phase:** 03-tmux-capture (next)
+**Current plan:** 04 of 4 (completed 02-04 — Phase 2 COMPLETE)
+**Next action:** Begin Phase 3 — tmux capture and terminal context pipeline
+**Last session:** 2026-03-28T07:11:30.059Z
 
 ## Progress
 
 | Phase | Status |
 |-------|--------|
 | 1 — Application Shell | green Complete (4/4 plans) |
-| 2 — LLM Gateway | 🟡 In progress (3/4 plans) |
+| 2 — LLM Gateway | green Complete (4/4 plans) |
 | 3 — tmux Capture | ⬜ Not started |
 | 4 — AT-SPI2 Adapters | ⬜ Not started |
 | 5 — Settings & Config | ⬜ Not started |
@@ -71,6 +71,9 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 - **wailsjs/runtime stub committed with .gitignore exception** — `/* @vite-ignore */` only suppresses Vite warnings, not vitest import analysis; stub JS file at `frontend/wailsjs/runtime/runtime.js` must physically exist for vitest to resolve dynamic import path
 - **vi.mock path must match resolved absolute path** — test at `__tests__/` must use `../../../wailsjs/runtime/runtime` to reach same absolute path that hook's `../../wailsjs/runtime/runtime` resolves to
 - **termRefsMap outside Zustand** — xterm Terminal objects are not serializable; store exposes setTermRef/getTermRef as methods backed by external Map, no re-render on terminal ref changes
+- **LMSTUDIO_HOST env var** — allows remote LM Studio endpoints (not just localhost:1234); added to Config struct and LoadConfig() (02-04)
+- **react-markdown + react-shiki needed npm install** — both packages were in package.json from plan author but not installed; npm install required as part of 02-04 execution
+- **Human verification confirmed live streaming** — LM Studio qwen/qwen3.5-35b-a3b at 192.168.101.56 returned 352 and 1651 chunk counts; streaming chat end-to-end verified (02-04)
 
 ## Research Completed
 
@@ -96,4 +99,4 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 
 ---
 *Initialized: 2026-03-25*
-*Last updated: 2026-03-28 — Wave 1 complete: 02-01 (LLM gateway + 5 adapters) + 02-02 (filter pipeline ANSI + credential)*
+*Last updated: 2026-03-28 — Phase 2 complete: 02-01 (LLM gateway + 5 adapters) + 02-02 (filter pipeline) + 02-03 (streaming state layer) + 02-04 (end-to-end wiring, human-verified)*

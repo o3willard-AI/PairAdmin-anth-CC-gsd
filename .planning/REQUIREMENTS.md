@@ -35,7 +35,7 @@
 - [x] **FILT-03**: Filtered/redacted content is what gets sent to the LLM — original unredacted content is never transmitted to cloud APIs
 - [ ] **FILT-04**: User can add custom filter patterns via `/filter add <name> <regex> <action>` slash command
 - [ ] **FILT-05**: User can list and remove custom filter patterns via `/filter list` and `/filter remove <name>`
-- [ ] **FILT-06**: Terminal content is truncated to fit within the active provider's context window; most recent content is prioritized
+- [x] **FILT-06**: Terminal content is truncated to fit within the active provider's context window; most recent content is prioritized
 - [x] **FILT-07**: Token count and context usage is displayed in the status bar
 
 ### LLM Gateway
@@ -53,13 +53,13 @@
 - [x] **CHAT-01**: User can type a question in the chat input and send it (Enter to send, Shift+Enter for newline)
 - [x] **CHAT-02**: Every outgoing message includes the current terminal context (filtered) assembled as a system prompt prefix
 - [x] **CHAT-03**: AI responses stream token-by-token into the chat area as they arrive
-- [ ] **CHAT-04**: AI-suggested commands are rendered in syntax-highlighted code blocks (react-shiki) with a "Copy to Terminal" button
+- [x] **CHAT-04**: AI-suggested commands are rendered in syntax-highlighted code blocks (react-shiki) with a "Copy to Terminal" button
 - [ ] **CHAT-05**: Chat history is isolated per terminal tab; switching tabs shows that tab's conversation only
 - [ ] **CHAT-06**: `/clear` command clears chat history for the current tab
 
 ### Command Sidebar
 
-- [ ] **CMD-01**: Every command block the AI suggests is automatically added to the command sidebar
+- [x] **CMD-01**: Every command block the AI suggests is automatically added to the command sidebar
 - [ ] **CMD-02**: Commands in the sidebar are displayed in reverse-chronological order (newest at top)
 - [x] **CMD-03**: Clicking a command in the sidebar copies it to the clipboard
 - [x] **CMD-04**: Hovering over a sidebar command shows the original question that generated it
@@ -151,7 +151,7 @@
 | CHAT-01 | Phase 1 | Complete |
 | CHAT-05 | Phase 1 | Pending |
 | CHAT-06 | Phase 1 | Pending |
-| CMD-01 | Phase 1 | Pending |
+| CMD-01 | Phase 1 | Complete |
 | CMD-02 | Phase 1 | Pending |
 | CMD-03 | Phase 1 | Complete |
 | CMD-04 | Phase 1 | Complete |
@@ -161,7 +161,7 @@
 | FILT-01 | Phase 2 | Complete |
 | FILT-02 | Phase 2 | Complete |
 | FILT-03 | Phase 2 | Complete |
-| FILT-06 | Phase 2 | Pending |
+| FILT-06 | Phase 2 | Complete |
 | FILT-07 | Phase 2 | Complete |
 | LLM-01 | Phase 2 | Complete |
 | LLM-02 | Phase 2 | Complete |
@@ -172,7 +172,7 @@
 | LLM-07 | Phase 2 | Complete |
 | CHAT-02 | Phase 2 | Complete |
 | CHAT-03 | Phase 2 | Complete |
-| CHAT-04 | Phase 2 | Pending |
+| CHAT-04 | Phase 2 | Complete |
 | TMUX-01 | Phase 3 | Pending |
 | TMUX-02 | Phase 3 | Pending |
 | TMUX-03 | Phase 3 | Pending |

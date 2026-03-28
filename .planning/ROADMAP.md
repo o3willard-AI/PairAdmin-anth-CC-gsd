@@ -42,13 +42,13 @@ Plans:
 
 **Requirements:** LLM-01–07, FILT-01, FILT-02, FILT-03, FILT-06, FILT-07, CHAT-02, CHAT-03, CHAT-04
 
-**Plans:** 2/4 plans executed
+**Plans:** 4/4 plans complete
 
 Plans:
 - [x] 02-01-PLAN.md — Go LLM provider interface, five provider adapters (OpenAI/OpenRouter/LM Studio/Anthropic/Ollama), LLMService with 50ms batching EventsEmit
 - [x] 02-02-PLAN.md — Filter pipeline: ANSI stripping (leaanthony/go-ansi-parser) + credential redaction (gitleaks + fallback regex)
-- [ ] 02-03-PLAN.md — Frontend: chatStore streaming actions, terminalStore xterm ref registry, useLLMStream hook with reorder buffer
-- [ ] 02-04-PLAN.md — Full wiring: ChatPane to LLMService, CodeBlock react-shiki component, TerminalPreview ref registration, StatusBar token count, human verify
+- [x] 02-03-PLAN.md — Frontend: chatStore streaming actions, terminalStore xterm ref registry, useLLMStream hook with reorder buffer
+- [x] 02-04-PLAN.md — Full wiring: ChatPane to LLMService, CodeBlock react-shiki component, TerminalPreview ref registration, StatusBar token count, human verify
 
 **Key deliverables:**
 - Provider interface: `Stream() (<-chan StreamChunk, error)` + `Complete()` + `TestConnection()`

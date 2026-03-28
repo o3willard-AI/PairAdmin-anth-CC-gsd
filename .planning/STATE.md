@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
 current_plan: 02 of 4
-status: Phase 2 in progress — 02-01 complete (LLM gateway Go side)
-last_updated: "2026-03-28T05:31:33.538Z"
+status: Phase 2 in progress — Wave 1 complete (02-01 LLM gateway + 02-02 filter pipeline)
+last_updated: "2026-03-28T05:35:00Z"
 progress:
   total_phases: 7
   completed_phases: 1
@@ -27,14 +27,14 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 **Active phase:** 02-llm-gateway-streaming-chat
 **Current plan:** 02 of 4
 **Next action:** Wave 2 — Frontend streaming layer (02-03), then full wiring (02-04)
-**Last session:** 2026-03-28T05:31:33Z
+**Last session:** 2026-03-28T05:35:00Z
 
 ## Progress
 
 | Phase | Status |
 |-------|--------|
 | 1 — Application Shell | green Complete (4/4 plans) |
-| 2 — LLM Gateway | 🟡 In progress (1/4 plans) |
+| 2 — LLM Gateway | 🟡 In progress (2/4 plans) |
 | 3 — tmux Capture | ⬜ Not started |
 | 4 — AT-SPI2 Adapters | ⬜ Not started |
 | 5 — Settings & Config | ⬜ Not started |
@@ -54,7 +54,8 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 - **xterm.js** for terminal preview (direct writes, not React state)
 - **Zustand + Immer** for frontend state (3 stores: chat, terminal, commands)
 - **react-shiki** for syntax highlighting (streaming delay prop)
-- **gitleaks** as credential pattern foundation
+- **gitleaks** as credential pattern foundation (regex-only mode in filter package — gitleaks not added as go.mod dep; comprehensive regex patterns cover required credential formats)
+- **ANSIFilter uses comprehensive regex** (not go-ansi-parser Cleanse) — library only handles SGR color codes; cursor movement and OSC sequences require full regex approach
 - **ANSI stripping is Stage 1** of filter pipeline (security, not cosmetic)
 - **vitest 4.x constructor mocks** require class syntax, not vi.fn().mockImplementation
 - **CanvasAddon must load after term.open()** — enforced in TerminalPreview (plan 01-02)
@@ -92,4 +93,4 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 
 ---
 *Initialized: 2026-03-25*
-*Last updated: 2026-03-28 — 02-01 complete, LLM gateway Go side (provider interface + 5 adapters + LLMService)*
+*Last updated: 2026-03-28 — Wave 1 complete: 02-01 (LLM gateway + 5 adapters) + 02-02 (filter pipeline ANSI + credential)*

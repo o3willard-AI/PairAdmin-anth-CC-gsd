@@ -25,8 +25,8 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 
 **Milestone:** v1.0 — Linux release
 **Active phase:** 03-tmux-terminal-capture
-**Current plan:** 03-02 complete — Wave 1 done; 03-03 (UI wiring) next
-**Next action:** 03-03 — Wire TerminalPreview, no-tmux empty state, mount hook in AppLayout
+**Current plan:** Wave 1 complete (03-01 + 03-02); 03-03 (UI wiring) next
+**Next action:** 03-03 — Wire TerminalPreview live content, no-tmux empty state, mount hook in AppLayout
 **Last session:** 2026-03-28T17:20:00Z
 
 ## Progress
@@ -35,7 +35,7 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 |-------|--------|
 | 1 — Application Shell | green Complete (4/4 plans) |
 | 2 — LLM Gateway | green Complete (4/4 plans) |
-| 3 — tmux Capture | 🔄 In progress (1/3 plans) |
+| 3 — tmux Capture | 🟡 In progress (2/3 plans) |
 | 4 — AT-SPI2 Adapters | ⬜ Not started |
 | 5 — Settings & Config | ⬜ Not started |
 | 6 — Security Hardening | ⬜ Not started |
@@ -77,6 +77,9 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 - **TerminalService emits post-WaitGroup** — capture goroutines collect results into slice; emitFn called from main goroutine after wg.Wait(); avoids EventsEmit thread-safety concerns (03-01)
 - **capturePane filter degradation** — if filter init/apply fails, returns unfiltered content rather than propagating error; terminal availability > filter failure at runtime (03-01)
 - **Injectable emitFn field** — TerminalService.emitFn allows test isolation of Wails events without runtime; matches injectable lookPath/execCommand pattern (03-01)
+- **Empty initial terminalStore state** — tabs start empty, populated dynamically via terminal:tabs Wails events; first addTab sets activeTabId (03-02)
+- **removeTab active-tab auto-switch** — switches to first remaining tab or empty string per D-06; termRefsMap.delete() called outside Immer set for xterm cleanup (03-02)
+- **useTerminalCapture hook pattern** — follows useLLMStream.ts: dynamic @vite-ignore import, EventsOn subscriptions, cleanup unsubscribe on unmount (03-02)
 
 ## Research Completed
 
@@ -102,4 +105,4 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 
 ---
 *Initialized: 2026-03-25*
-*Last updated: 2026-03-28 — Phase 3 in progress: 03-01 complete (TerminalService backend — tmux discovery, capture, FNV-64a dedup, semaphore-4 concurrency, Wails event emission)*
+*Last updated: 2026-03-28 — Phase 3 Wave 1 complete: 03-01 (Go TerminalService — tmux discovery, FNV-64a dedup, semaphore-4) + 03-02 (terminalStore addTab/removeTab/clearTabs + useTerminalCapture hook)*

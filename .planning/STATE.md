@@ -19,15 +19,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-25)
 
 **Core value:** The AI sees exactly what you see in the terminal — automatically, without copy/paste — so assistance is always in context.
-**Current focus:** Phase 02 — llm-gateway-streaming-chat
+**Current focus:** Phase 03 — tmux-terminal-capture
 
 ## Current Position
 
 **Milestone:** v1.0 — Linux release
-**Active phase:** 03-tmux-capture (next)
-**Current plan:** Not started
-**Next action:** Begin Phase 3 — tmux capture and terminal context pipeline
-**Last session:** 2026-03-28T07:11:30.059Z
+**Active phase:** 03-tmux-terminal-capture
+**Current plan:** 03-02 complete (2/3 plans)
+**Next action:** Execute Plan 03-03 — wire useTerminalCapture and tab UI into App.tsx
+**Last session:** 2026-03-28T17:12:18Z
 
 ## Progress
 
@@ -35,7 +35,7 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 |-------|--------|
 | 1 — Application Shell | green Complete (4/4 plans) |
 | 2 — LLM Gateway | green Complete (4/4 plans) |
-| 3 — tmux Capture | ⬜ Not started |
+| 3 — tmux Capture | 🟡 In progress (2/3 plans) |
 | 4 — AT-SPI2 Adapters | ⬜ Not started |
 | 5 — Settings & Config | ⬜ Not started |
 | 6 — Security Hardening | ⬜ Not started |
@@ -74,6 +74,9 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 - **LMSTUDIO_HOST env var** — allows remote LM Studio endpoints (not just localhost:1234); added to Config struct and LoadConfig() (02-04)
 - **react-markdown + react-shiki needed npm install** — both packages were in package.json from plan author but not installed; npm install required as part of 02-04 execution
 - **Human verification confirmed live streaming** — LM Studio qwen/qwen3.5-35b-a3b at 192.168.101.56 returned 352 and 1651 chunk counts; streaming chat end-to-end verified (02-04)
+- **Empty initial terminalStore state** — tabs start empty, populated dynamically via terminal:tabs Wails events; first addTab sets activeTabId (03-02)
+- **removeTab active-tab auto-switch** — switches to first remaining tab or empty string per D-06; termRefsMap.delete() called outside Immer set for xterm cleanup (03-02)
+- **useTerminalCapture hook pattern** — follows useLLMStream.ts: dynamic @vite-ignore import, EventsOn subscriptions, cleanup unsubscribe on unmount (03-02)
 
 ## Research Completed
 
@@ -99,4 +102,4 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 
 ---
 *Initialized: 2026-03-25*
-*Last updated: 2026-03-28 — Phase 2 complete: 02-01 (LLM gateway + 5 adapters) + 02-02 (filter pipeline) + 02-03 (streaming state layer) + 02-04 (end-to-end wiring, human-verified)*
+*Last updated: 2026-03-28 — Phase 3 in progress: 03-01 (Go TerminalService) + 03-02 (terminalStore actions + useTerminalCapture hook)*

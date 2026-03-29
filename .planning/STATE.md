@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
-current_plan: Not started
-status: Ready to plan
-last_updated: "2026-03-29T07:13:34Z"
+current_plan: Phase 4 complete
+status: Phase complete — ready for Phase 5
+last_updated: "2026-03-28T01:40:00Z"
 progress:
   total_phases: 7
-  completed_phases: 3
+  completed_phases: 4
   total_plans: 15
-  completed_plans: 14
+  completed_plans: 15
 ---
 
 # Project State: PairAdmin v2.0
@@ -24,10 +24,10 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 ## Current Position
 
 **Milestone:** v1.0 — Linux release
-**Active phase:** 04-linux-gui-terminal-adapters-at-spi2
-**Current plan:** Plan 04 (next to execute)
-**Next action:** Execute Phase 4 — Plan 04
-**Last session:** 2026-03-29T07:13:34Z
+**Active phase:** 04-linux-gui-terminal-adapters-at-spi2 (complete)
+**Current plan:** All 4 plans complete
+**Next action:** Begin Phase 5 — Settings & Config
+**Last session:** 2026-03-28T01:40:00Z
 
 ## Progress
 
@@ -36,7 +36,7 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 | 1 — Application Shell | green Complete (4/4 plans) |
 | 2 — LLM Gateway | green Complete (4/4 plans) |
 | 3 — tmux Capture | green Complete (3/3 plans) |
-| 4 — AT-SPI2 Adapters | 🔵 In progress (3/4 plans) |
+| 4 — AT-SPI2 Adapters | green Complete (4/4 plans) |
 | 5 — Settings & Config | ⬜ Not started |
 | 6 — Security Hardening | ⬜ Not started |
 | 7 — Distribution | ⬜ Not started |
@@ -53,6 +53,10 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 - **CaptureManager.js wailsjs stub** — stub at frontend/wailsjs/go/services/capture/CaptureManager.js with .gitignore exception enables vitest import resolution for ThreeColumnLayout's dynamic GetAdapterStatus call (04-03)
 - **adapterStatus prop threading** — ThreeColumnLayout fetches GetAdapterStatus and passes result as prop to TerminalPreview; keeps TerminalPreview testable without dynamic import complexity in its own tests (04-03)
 - **vi.mock depth from __tests__ subdir** — from frontend/src/components/__tests__/ the path to wailsjs is 4 levels up (../../../../wailsjs/...); path differs from component source which uses 3 levels (../../../wailsjs/...) (04-03)
+- **filterPipelineRebuilder interface on LLMService** — duck-typing consistent with OnboardingRequired pattern (04-02); decouples services package from capture package (04-04)
+- **CaptureManager.pipeline nil when no custom patterns** — zero-overhead on 500ms poll hot path; nil check before Apply in tick (04-04)
+- **applyFilterPipeline retained as package-level function** — ATSPIAdapter.Capture uses it for per-capture ANSI+credential filtering; CaptureManager.pipeline adds CustomFilter as second pass (04-04)
+- **system role in ChatMessage + addSystemMessage** — inline /filter command output in chat without LLM stream machinery; italic muted rendering (04-04)
 
 ---
 
@@ -122,4 +126,4 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 
 ---
 *Initialized: 2026-03-25*
-*Last updated: 2026-03-29 — Phase 3 complete: Plan 03-03 human-verified. Full tmux capture pipeline operational end-to-end. 62 frontend tests pass. Rules of Hooks fix and wailsjs/runtime vitest mock applied.*
+*Last updated: 2026-03-28 — Phase 4 complete: Plan 04-04 executed. /filter slash commands with Viper persistence, CaptureManager custom filter pipeline, system message rendering. 68 frontend tests pass.*

@@ -3,7 +3,7 @@ phase: 4
 slug: linux-gui-terminal-adapters-at-spi2
 status: draft
 nyquist_compliant: false
-wave_0_complete: false
+wave_0_complete: true
 created: 2026-03-29
 ---
 
@@ -38,28 +38,27 @@ created: 2026-03-29
 
 | Task ID | Plan | Wave | Requirement | Test Type | Automated Command | File Exists | Status |
 |---------|------|------|-------------|-----------|-------------------|-------------|--------|
-| 04-01-01 | 01 | 1 | — | unit | `go test ./services/capture/... -run TestCaptureManager` | ❌ W0 | ⬜ pending |
-| 04-01-02 | 01 | 1 | — | unit | `go test ./services/capture/... -run TestTmuxAdapter` | ❌ W0 | ⬜ pending |
-| 04-02-01 | 02 | 2 | ATSPI-01 | unit | `go test ./services/capture/... -run TestAtSpiEnabled` | ❌ W0 | ⬜ pending |
-| 04-02-02 | 02 | 2 | ATSPI-02 | unit | `go test ./services/capture/... -run TestAtSpiDiscover` | ❌ W0 | ⬜ pending |
-| 04-02-03 | 02 | 2 | ATSPI-03 | unit | `go test ./services/capture/... -run TestAtSpiCapture` | ❌ W0 | ⬜ pending |
-| 04-03-01 | 03 | 2 | ATSPI-04 | unit | `go test ./services/capture/... -run TestKonsoleSpike` | ❌ W0 | ⬜ pending |
-| 04-04-01 | 04 | 3 | FILT-04 | unit | `go test ./services/... -run TestFilterAdd` | ❌ W0 | ⬜ pending |
-| 04-04-02 | 04 | 3 | FILT-05 | unit | `go test ./services/... -run TestFilterListRemove` | ❌ W0 | ⬜ pending |
-| 04-04-03 | 04 | 3 | FILT-04 | unit | `cd frontend && npx vitest run --reporter=verbose src/hooks/__tests__/useSlashCommand` | ❌ W0 | ⬜ pending |
+| 04-01-01 | 01 | 1 | — | unit | `go test ./services/capture/... -run TestCaptureManager` | TDD | pending |
+| 04-01-02 | 01 | 1 | — | unit | `go test ./services/capture/... -run TestTmuxAdapter` | TDD | pending |
+| 04-02-01 | 02 | 2 | ATSPI-01 | unit | `go test ./services/capture/... -run TestAtSpiEnabled` | TDD | pending |
+| 04-02-02 | 02 | 2 | ATSPI-02 | unit | `go test ./services/capture/... -run TestAtSpiDiscover` | TDD | pending |
+| 04-02-03 | 02 | 2 | ATSPI-03 | unit | `go test ./services/capture/... -run TestAtSpiCapture` | TDD | pending |
+| 04-03-01 | 03 | 3 | ATSPI-04 | unit | `go test ./services/capture/... -run TestKonsoleSpike` | TDD | pending |
+| 04-04-01 | 04 | 4 | FILT-04 | unit | `go test ./services/... -run TestFilterAdd` | TDD | pending |
+| 04-04-02 | 04 | 4 | FILT-05 | unit | `go test ./services/... -run TestFilterListRemove` | TDD | pending |
+| 04-04-03 | 04 | 4 | FILT-04 | unit | `cd frontend && npx vitest run --reporter=verbose src/hooks/__tests__/useSlashCommand` | TDD | pending |
+| 04-04-04 | 04 | 4 | FILT-04 | unit | `go test ./services/capture/... -run TestCaptureManager.*Filter` | TDD | pending |
 
-*Status: ⬜ pending · ✅ green · ❌ red · ⚠️ flaky*
+*Status: pending / green / red / flaky*
 
 ---
 
 ## Wave 0 Requirements
 
-- [ ] `services/capture/capture_manager_test.go` — CaptureManager interface stubs
-- [ ] `services/capture/tmux_test.go` — TmuxAdapter unit test stubs (migrated from services/terminal_test.go)
-- [ ] `services/capture/atspi_test.go` — AtSpiAdapter stubs with injectable dbus connection
-- [ ] `frontend/src/hooks/__tests__/useSlashCommand.test.ts` — /filter command routing stubs
+All plans use TDD-first task ordering: test files are created as the first step within each task's RED phase before production code is written. No separate Wave 0 stub creation is needed.
 
-*Wave 0 must create stubs before adapters are implemented so go test ./services/capture/... compiles.*
+- [x] Test files are created during TDD RED phase within each task
+- [x] `go test ./services/capture/...` will compile once task execution begins (test file created before production code)
 
 ---
 
@@ -78,7 +77,7 @@ created: 2026-03-29
 
 - [ ] All tasks have `<automated>` verify or Wave 0 dependencies
 - [ ] Sampling continuity: no 3 consecutive tasks without automated verify
-- [ ] Wave 0 covers all MISSING references
+- [x] Wave 0 covers all MISSING references (TDD-first ordering sufficient)
 - [ ] No watch-mode flags
 - [ ] Feedback latency < 30s
 - [ ] `nyquist_compliant: true` set in frontmatter

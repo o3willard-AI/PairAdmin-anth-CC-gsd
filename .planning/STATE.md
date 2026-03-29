@@ -2,9 +2,9 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
-current_plan: 04-01
-status: In progress
-last_updated: "2026-03-29T05:00:00Z"
+current_plan: Not started
+status: Ready to plan
+last_updated: "2026-03-29T04:30:07.739Z"
 progress:
   total_phases: 7
   completed_phases: 3
@@ -25,7 +25,7 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 
 **Milestone:** v1.0 — Linux release
 **Active phase:** 03-tmux-terminal-capture
-**Current plan:** 04-01 (Phase 4 not yet started)
+**Current plan:** Not started
 **Next action:** Begin Phase 4 — AT-SPI2 Adapters spike
 **Last session:** 2026-03-29T05:00:00Z
 

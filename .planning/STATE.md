@@ -25,9 +25,9 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 
 **Milestone:** v1.0 — Linux release
 **Active phase:** 03-tmux-terminal-capture
-**Current plan:** Not started
-**Next action:** Begin Phase 4 — AT-SPI2 Adapters spike
-**Last session:** 2026-03-29T05:05:48.659Z
+**Current plan:** Plan 02 (starting)
+**Next action:** Continue Phase 4 — Plan 02: AT-SPI2 adapter spike
+**Last session:** 2026-03-29T05:49:11Z
 
 ## Progress
 
@@ -36,12 +36,18 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 | 1 — Application Shell | green Complete (4/4 plans) |
 | 2 — LLM Gateway | green Complete (4/4 plans) |
 | 3 — tmux Capture | green Complete (3/3 plans) |
-| 4 — AT-SPI2 Adapters | ⬜ Not started |
+| 4 — AT-SPI2 Adapters | 🔵 In progress (1/4 plans) |
 | 5 — Settings & Config | ⬜ Not started |
 | 6 — Security Hardening | ⬜ Not started |
 | 7 — Distribution | ⬜ Not started |
 
 ## Key Decisions Locked
+
+- **CaptureManager multi-adapter architecture** — TerminalAdapter interface owns tmux and AT-SPI2; pane IDs namespaced tmux:%N (04-01)
+- **execCommand struct field on TmuxAdapter** — per-instance test injection pattern (not package-level var) (04-01)
+- **CaptureManager not in Wails Bind** — events-only, no RPC methods; only app/commands/llmService bound (04-01)
+
+---
 
 - **Vite v5 + TypeScript v5** required (Wails scaffold ships v3/4.6 but Tailwind v4 and @base-ui/react require upgrades)
 - **shadcn/ui base-nova style** uses @base-ui/react (not Radix UI) — different peer dep tree than classic shadcn

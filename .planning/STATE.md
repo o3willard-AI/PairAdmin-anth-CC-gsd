@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
-current_plan: 03-03 checkpoint:human-verify pending
+current_plan: 04-01
 status: In progress
-last_updated: "2026-03-29T04:03:00Z"
+last_updated: "2026-03-29T05:00:00Z"
 progress:
   total_phases: 7
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 11
-  completed_plans: 10
+  completed_plans: 11
 ---
 
 # Project State: PairAdmin v2.0
@@ -25,9 +25,9 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 
 **Milestone:** v1.0 — Linux release
 **Active phase:** 03-tmux-terminal-capture
-**Current plan:** 03-03 (2/3 tasks done; awaiting checkpoint:human-verify Task 3)
-**Next action:** Human verify live tmux capture end-to-end (run `wails dev`, start tmux session, verify tabs/content/empty-state)
-**Last session:** 2026-03-29T04:03:00Z
+**Current plan:** 04-01 (Phase 4 not yet started)
+**Next action:** Begin Phase 4 — AT-SPI2 Adapters spike
+**Last session:** 2026-03-29T05:00:00Z
 
 ## Progress
 
@@ -35,7 +35,7 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 |-------|--------|
 | 1 — Application Shell | green Complete (4/4 plans) |
 | 2 — LLM Gateway | green Complete (4/4 plans) |
-| 3 — tmux Capture | 🟡 In progress (2/3 plans) |
+| 3 — tmux Capture | green Complete (3/3 plans) |
 | 4 — AT-SPI2 Adapters | ⬜ Not started |
 | 5 — Settings & Config | ⬜ Not started |
 | 6 — Security Hardening | ⬜ Not started |
@@ -81,7 +81,9 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 - **removeTab active-tab auto-switch** — switches to first remaining tab or empty string per D-06; termRefsMap.delete() called outside Immer set for xterm cleanup (03-02)
 - **useTerminalCapture hook pattern** — follows useLLMStream.ts: dynamic @vite-ignore import, EventsOn subscriptions, cleanup unsubscribe on unmount (03-02)
 - **useTerminalCapture mounted in ThreeColumnLayout** — AppLayout.tsx doesn't exist; ThreeColumnLayout is the correct layout owner for terminal state (03-03)
-- **TerminalPreview empty state is early return** — when tabId is empty, returns instruction div before useEffect; xterm setup only runs when actual tabId present (03-03)
+- **TerminalPreview empty state is early return after hooks** — useEffect must be declared before any conditional return per React Rules of Hooks; tabId empty check placed after useEffect declaration (03-03)
+- **useEffect must precede early return in TerminalPreview** — Rules of Hooks; early return guard must appear after all hook declarations (03-03)
+- **ThreeColumnLayout test requires wailsjs/runtime mock when useTerminalCapture is mounted** — dynamic import of wailsjs/runtime fails in vitest without a vi.mock stub (03-03)
 
 ## Research Completed
 
@@ -107,4 +109,4 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 
 ---
 *Initialized: 2026-03-25*
-*Last updated: 2026-03-29 — Phase 3 Plan 03 auto tasks complete: TerminalPreview mock removed + empty state added; useTerminalCapture mounted in ThreeColumnLayout. Awaiting checkpoint:human-verify (Task 3)*
+*Last updated: 2026-03-29 — Phase 3 complete: Plan 03-03 human-verified. Full tmux capture pipeline operational end-to-end. 62 frontend tests pass. Rules of Hooks fix and wailsjs/runtime vitest mock applied.*

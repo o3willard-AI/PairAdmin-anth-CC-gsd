@@ -73,12 +73,12 @@ Plans:
 
 **Requirements:** TMUX-01–06
 
-**Plans:** 0/3 plans executed
+**Plans:** 3/3 plans complete
 
 Plans:
-- [ ] 03-01-PLAN.md — Go TerminalService: tmux discovery, capture, 500ms polling, FNV-64a dedup, bounded concurrency, Wails event emission
-- [ ] 03-02-PLAN.md — Frontend: terminalStore addTab/removeTab/clearTabs actions, useTerminalCapture Wails event hook
-- [ ] 03-03-PLAN.md — UI wiring: TerminalPreview live content + no-tmux empty state, AppLayout hook mount, human verification
+- [x] 03-01-PLAN.md — Go TerminalService: tmux discovery, capture, 500ms polling, FNV-64a dedup, bounded concurrency, Wails event emission
+- [x] 03-02-PLAN.md — Frontend: terminalStore addTab/removeTab/clearTabs actions, useTerminalCapture Wails event hook
+- [x] 03-03-PLAN.md — UI wiring: TerminalPreview live content + no-tmux empty state, ThreeColumnLayout hook mount, human verification
 
 **Key deliverables:**
 - `TerminalAdapter` interface: `IsAvailable()`, `Discover() []PaneID`, `Capture(PaneID) (string, error)`, `Close()`
@@ -188,4 +188,4 @@ Plans:
 | 6 | Security Hardening | memguard, audit log, response filtering |
 | 7 | Distribution | .deb, .rpm, AppImage, clean install |
 
-**Status:** Phase 3 planned — ready for execution
+**Status:** Phase 3 complete — Phase 4 ready for execution

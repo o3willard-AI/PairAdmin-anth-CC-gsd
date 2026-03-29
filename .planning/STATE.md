@@ -24,9 +24,9 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 ## Current Position
 
 **Milestone:** v1.0 — Linux release
-**Active phase:** 03-tmux-terminal-capture
-**Current plan:** Plan 02 (starting)
-**Next action:** Continue Phase 4 — Plan 02: AT-SPI2 adapter spike
+**Active phase:** 04-linux-gui-terminal-adapters-at-spi2
+**Current plan:** Plan 02 (complete)
+**Next action:** Continue Phase 4 — Plan 03: Konsole AT-SPI2 spike
 **Last session:** 2026-03-29T05:49:11Z
 
 ## Progress
@@ -36,7 +36,7 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 | 1 — Application Shell | green Complete (4/4 plans) |
 | 2 — LLM Gateway | green Complete (4/4 plans) |
 | 3 — tmux Capture | green Complete (3/3 plans) |
-| 4 — AT-SPI2 Adapters | 🔵 In progress (1/4 plans) |
+| 4 — AT-SPI2 Adapters | 🔵 In progress (2/4 plans) |
 | 5 — Settings & Config | ⬜ Not started |
 | 6 — Security Hardening | ⬜ Not started |
 | 7 — Distribution | ⬜ Not started |
@@ -45,7 +45,10 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 
 - **CaptureManager multi-adapter architecture** — TerminalAdapter interface owns tmux and AT-SPI2; pane IDs namespaced tmux:%N (04-01)
 - **execCommand struct field on TmuxAdapter** — per-instance test injection pattern (not package-level var) (04-01)
-- **CaptureManager not in Wails Bind** — events-only, no RPC methods; only app/commands/llmService bound (04-01)
+- **CaptureManager not in Wails Bind (04-01 only)** — Plan 02 adds GetAdapterStatus RPC, requiring manager in Bind list (04-02)
+- **Injectable function fields on ATSPIAdapter** — getA11yAddress, listBusNames, getCacheItems, getText, gsettingsOutput fields enable unit testing without live D-Bus; consistent with TmuxAdapter.execCommand pattern (04-02)
+- **IsAvailable checks GetAddress not IsEnabled** — AT-SPI2 bus works even when GSettings IsEnabled=false; GetAddress is the correct reachability signal (04-02)
+- **OnboardingRequired via duck-typing in GetAdapterStatus** — CaptureManager uses interface{ OnboardingRequired(ctx) bool } assertion to decouple manager from atspi package types (04-02)
 
 ---
 

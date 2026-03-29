@@ -25,9 +25,9 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 
 **Milestone:** v1.0 — Linux release
 **Active phase:** 04-linux-gui-terminal-adapters-at-spi2
-**Current plan:** Plan 02 (complete)
-**Next action:** Continue Phase 4 — Plan 03: Konsole AT-SPI2 spike
-**Last session:** 2026-03-29T05:49:11Z
+**Current plan:** Plan 03 (awaiting human-verify checkpoint)
+**Next action:** Continue Phase 4 — Plan 03: human-verify checkpoint (Task 2)
+**Last session:** 2026-03-29T06:07:36Z
 
 ## Progress
 
@@ -49,6 +49,10 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 - **Injectable function fields on ATSPIAdapter** — getA11yAddress, listBusNames, getCacheItems, getText, gsettingsOutput fields enable unit testing without live D-Bus; consistent with TmuxAdapter.execCommand pattern (04-02)
 - **IsAvailable checks GetAddress not IsEnabled** — AT-SPI2 bus works even when GSettings IsEnabled=false; GetAddress is the correct reachability signal (04-02)
 - **OnboardingRequired via duck-typing in GetAdapterStatus** — CaptureManager uses interface{ OnboardingRequired(ctx) bool } assertion to decouple manager from atspi package types (04-02)
+- **GetText probe during Discover** — ATSPIAdapter probes getText on each discovered terminal at Discover time; marks Degraded=true on failure so tab shows warning badge immediately without silent capture failure (04-03)
+- **CaptureManager.js wailsjs stub** — stub at frontend/wailsjs/go/services/capture/CaptureManager.js with .gitignore exception enables vitest import resolution for ThreeColumnLayout's dynamic GetAdapterStatus call (04-03)
+- **adapterStatus prop threading** — ThreeColumnLayout fetches GetAdapterStatus and passes result as prop to TerminalPreview; keeps TerminalPreview testable without dynamic import complexity in its own tests (04-03)
+- **vi.mock depth from __tests__ subdir** — from frontend/src/components/__tests__/ the path to wailsjs is 4 levels up (../../../../wailsjs/...); path differs from component source which uses 3 levels (../../../wailsjs/...) (04-03)
 
 ---
 

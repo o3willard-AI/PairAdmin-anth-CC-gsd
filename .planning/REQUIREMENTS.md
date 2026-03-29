@@ -23,18 +23,18 @@
 
 ### Terminal Capture — Linux GUI (AT-SPI2)
 
-- [ ] **ATSPI-01**: Application detects whether AT-SPI2 accessibility is enabled at startup; guides user to enable if not
-- [ ] **ATSPI-02**: GNOME Terminal windows (GTK3) are discovered via AT-SPI2 accessibility bus (`ATSPI_ROLE_TERMINAL` objects)
-- [ ] **ATSPI-03**: Visible terminal content is read from GNOME Terminal via `org.a11y.atspi.Text.GetText(0, -1)` at 500ms polling interval
-- [ ] **ATSPI-04**: Konsole windows are attempted via AT-SPI2; feature degrades gracefully if text extraction fails (experimental)
+- [x] **ATSPI-01**: Application detects whether AT-SPI2 accessibility is enabled at startup; guides user to enable if not
+- [x] **ATSPI-02**: GNOME Terminal windows (GTK3) are discovered via AT-SPI2 accessibility bus (`ATSPI_ROLE_TERMINAL` objects)
+- [x] **ATSPI-03**: Visible terminal content is read from GNOME Terminal via `org.a11y.atspi.Text.GetText(0, -1)` at 500ms polling interval
+- [x] **ATSPI-04**: Konsole windows are attempted via AT-SPI2; feature degrades gracefully if text extraction fails (experimental)
 
 ### Context & Filtering
 
 - [x] **FILT-01**: ANSI/VT100 escape sequences are stripped from all terminal content before any processing (security requirement — prevents injection via invisible sequences)
 - [x] **FILT-02**: Built-in credential filter detects and redacts: AWS access keys, AWS secret keys, GitHub tokens, GCP service account keys, generic API keys, SSH private key blocks, database DSN passwords, bearer tokens, password prompt lines
 - [x] **FILT-03**: Filtered/redacted content is what gets sent to the LLM — original unredacted content is never transmitted to cloud APIs
-- [ ] **FILT-04**: User can add custom filter patterns via `/filter add <name> <regex> <action>` slash command
-- [ ] **FILT-05**: User can list and remove custom filter patterns via `/filter list` and `/filter remove <name>`
+- [x] **FILT-04**: User can add custom filter patterns via `/filter add <name> <regex> <action>` slash command
+- [x] **FILT-05**: User can list and remove custom filter patterns via `/filter list` and `/filter remove <name>`
 - [x] **FILT-06**: Terminal content is truncated to fit within the active provider's context window; most recent content is prioritized
 - [x] **FILT-07**: Token count and context usage is displayed in the status bar
 
@@ -179,12 +179,12 @@
 | TMUX-04 | Phase 3 | Complete |
 | TMUX-05 | Phase 3 | Complete |
 | TMUX-06 | Phase 3 | Complete |
-| ATSPI-01 | Phase 4 | Pending |
-| ATSPI-02 | Phase 4 | Pending |
-| ATSPI-03 | Phase 4 | Pending |
-| ATSPI-04 | Phase 4 | Pending |
-| FILT-04 | Phase 4 | Pending |
-| FILT-05 | Phase 4 | Pending |
+| ATSPI-01 | Phase 4 | Complete |
+| ATSPI-02 | Phase 4 | Complete |
+| ATSPI-03 | Phase 4 | Complete |
+| ATSPI-04 | Phase 4 | Complete |
+| FILT-04 | Phase 4 | Complete |
+| FILT-05 | Phase 4 | Complete |
 | CFG-01 | Phase 5 | Pending |
 | CFG-02 | Phase 5 | Pending |
 | CFG-03 | Phase 5 | Pending |

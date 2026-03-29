@@ -27,7 +27,7 @@ The AI sees exactly what you see in the terminal — automatically, without copy
 - [ ] Secure API key storage via OS keychain
 - [ ] Local audit log of all AI interactions
 - [ ] tmux adapter (Linux/macOS — subprocess via `tmux capture-pane`)
-- [ ] Linux GUI terminal adapters (GNOME Terminal, Konsole via AT-SPI2)
+- [x] Linux GUI terminal adapters (GNOME Terminal, Konsole via AT-SPI2) — Validated in Phase 4: AT-SPI2 adapter (D-Bus discovery, GetText capture, Konsole degraded badge, onboarding empty state)
 - [ ] Installable packages: AppImage + .deb/.rpm for Linux
 
 ### Out of Scope
@@ -82,4 +82,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-29 — Phase 3 complete: tmux capture pipeline live (Go TerminalService → useTerminalCapture hook → xterm.js TerminalPreview); human-verified end-to-end*
+*Last updated: 2026-03-29 — Phase 4 complete: AT-SPI2 adapter + CaptureManager multi-adapter architecture + /filter commands + Viper persistence; 22/22 must-haves verified*

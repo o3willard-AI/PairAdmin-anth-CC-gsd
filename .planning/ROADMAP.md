@@ -100,13 +100,13 @@ Plans:
 
 **Requirements:** ATSPI-01–04, FILT-04, FILT-05
 
-**Plans:** 4 plans
+**Plans:** 4/4 plans complete
 
 Plans:
-- [ ] 04-01-PLAN.md — CaptureManager architecture + TmuxAdapter refactor from services/terminal.go
-- [ ] 04-02-PLAN.md — AT-SPI2 adapter: D-Bus accessibility bus connection, GNOME Terminal discovery and text capture
-- [ ] 04-03-PLAN.md — Konsole spike + frontend degraded tab badge + AT-SPI2 onboarding empty state
-- [ ] 04-04-PLAN.md — /filter add|list|remove slash commands with Viper config persistence and CustomFilter
+- [x] 04-01-PLAN.md — CaptureManager architecture + TmuxAdapter refactor from services/terminal.go
+- [x] 04-02-PLAN.md — AT-SPI2 adapter: D-Bus accessibility bus connection, GNOME Terminal discovery and text capture
+- [x] 04-03-PLAN.md — Konsole spike + frontend degraded tab badge + AT-SPI2 onboarding empty state
+- [x] 04-04-PLAN.md — /filter add|list|remove slash commands with Viper config persistence and CustomFilter
 
 **Note:** Konsole support is experimental — AT-SPI2 text access is unconfirmed. This phase includes a spike to validate before full implementation.
 

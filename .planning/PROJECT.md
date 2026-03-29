@@ -12,19 +12,15 @@ The AI sees exactly what you see in the terminal — automatically, without copy
 
 ### Validated
 
-(None yet — ship to validate)
-
-### Validated
-
 - [x] Real-time AI chat with full terminal context injected into every message — Validated in Phase 2: LLM Gateway
 - [x] Pre-LLM sensitive data filtering (passwords, API keys, tokens, private keys) — Validated in Phase 2: filter pipeline (ANSI strip + credential redaction)
 - [x] Multi-provider LLM support (OpenAI, Anthropic, Ollama/local) — Validated in Phase 2: 5 adapters (OpenAI, Anthropic, Ollama, OpenRouter, LM Studio); live-tested against LM Studio
+- [x] Automatic terminal content capture via platform-native APIs (no manual copy/paste) — Validated in Phase 3: tmux adapter (500ms polling, FNV-64a dedup, ANSI filter, Wails events)
+- [x] Multi-terminal tab management with isolated context per session — Validated in Phase 3: terminalStore addTab/removeTab/clearTabs + useTerminalCapture hook
 
 ### Active
 
-- [ ] Automatic terminal content capture via platform-native APIs (no manual copy/paste)
 - [ ] One-click "Copy to Terminal" to push suggested commands to clipboard
-- [ ] Multi-terminal tab management with isolated context per session
 - [ ] Command history sidebar (reverse-chronological, click-to-reuse)
 - [ ] Settings dialog (provider config, prompt extensions, hotkeys, appearance)
 - [ ] Slash command interface (/model, /filter, /context, /clear, /export, /rename)
@@ -86,4 +82,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-28 — Phase 2 complete: LLM gateway live (streaming confirmed vs LM Studio), filter pipeline validated*
+*Last updated: 2026-03-29 — Phase 3 complete: tmux capture pipeline live (Go TerminalService → useTerminalCapture hook → xterm.js TerminalPreview); human-verified end-to-end*

@@ -100,6 +100,14 @@ Plans:
 
 **Requirements:** ATSPI-01–04, FILT-04, FILT-05
 
+**Plans:** 4 plans
+
+Plans:
+- [ ] 04-01-PLAN.md — CaptureManager architecture + TmuxAdapter refactor from services/terminal.go
+- [ ] 04-02-PLAN.md — AT-SPI2 adapter: D-Bus accessibility bus connection, GNOME Terminal discovery and text capture
+- [ ] 04-03-PLAN.md — Konsole spike + frontend degraded tab badge + AT-SPI2 onboarding empty state
+- [ ] 04-04-PLAN.md — /filter add|list|remove slash commands with Viper config persistence and CustomFilter
+
 **Note:** Konsole support is experimental — AT-SPI2 text access is unconfirmed. This phase includes a spike to validate before full implementation.
 
 **Key deliverables:**
@@ -188,4 +196,4 @@ Plans:
 | 6 | Security Hardening | memguard, audit log, response filtering |
 | 7 | Distribution | .deb, .rpm, AppImage, clean install |
 
-**Status:** Phase 3 complete — Phase 4 ready for execution
+**Status:** Phase 3 complete — Phase 4 planned, ready for execution

@@ -2,9 +2,9 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
-current_plan: 03-01 + 03-02 complete
+current_plan: 03-03 checkpoint:human-verify pending
 status: In progress
-last_updated: "2026-03-28T17:20:00Z"
+last_updated: "2026-03-29T04:03:00Z"
 progress:
   total_phases: 7
   completed_phases: 2
@@ -25,9 +25,9 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 
 **Milestone:** v1.0 — Linux release
 **Active phase:** 03-tmux-terminal-capture
-**Current plan:** Wave 1 complete (03-01 + 03-02); 03-03 (UI wiring) next
-**Next action:** 03-03 — Wire TerminalPreview live content, no-tmux empty state, mount hook in AppLayout
-**Last session:** 2026-03-28T17:20:00Z
+**Current plan:** 03-03 (2/3 tasks done; awaiting checkpoint:human-verify Task 3)
+**Next action:** Human verify live tmux capture end-to-end (run `wails dev`, start tmux session, verify tabs/content/empty-state)
+**Last session:** 2026-03-29T04:03:00Z
 
 ## Progress
 
@@ -80,6 +80,8 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 - **Empty initial terminalStore state** — tabs start empty, populated dynamically via terminal:tabs Wails events; first addTab sets activeTabId (03-02)
 - **removeTab active-tab auto-switch** — switches to first remaining tab or empty string per D-06; termRefsMap.delete() called outside Immer set for xterm cleanup (03-02)
 - **useTerminalCapture hook pattern** — follows useLLMStream.ts: dynamic @vite-ignore import, EventsOn subscriptions, cleanup unsubscribe on unmount (03-02)
+- **useTerminalCapture mounted in ThreeColumnLayout** — AppLayout.tsx doesn't exist; ThreeColumnLayout is the correct layout owner for terminal state (03-03)
+- **TerminalPreview empty state is early return** — when tabId is empty, returns instruction div before useEffect; xterm setup only runs when actual tabId present (03-03)
 
 ## Research Completed
 
@@ -105,4 +107,4 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 
 ---
 *Initialized: 2026-03-25*
-*Last updated: 2026-03-28 — Phase 3 Wave 1 complete: 03-01 (Go TerminalService — tmux discovery, FNV-64a dedup, semaphore-4) + 03-02 (terminalStore addTab/removeTab/clearTabs + useTerminalCapture hook)*
+*Last updated: 2026-03-29 — Phase 3 Plan 03 auto tasks complete: TerminalPreview mock removed + empty state added; useTerminalCapture mounted in ThreeColumnLayout. Awaiting checkpoint:human-verify (Task 3)*

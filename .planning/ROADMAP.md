@@ -129,13 +129,13 @@ Plans:
 
 **Requirements:** CFG-01–08, SLASH-01–08, CLIP-03
 
-**Plans:** 0/4 plans executed
+**Plans:** 4/4 plans executed
 
 Plans:
 - [x] 05-01-PLAN.md — Go backend: expanded AppConfig, keychain integration, SettingsService RPCs, clipboard auto-clear
-- [ ] 05-02-PLAN.md — Frontend settings dialog with 5 tabs, settingsStore, StatusBar wiring
-- [ ] 05-03-PLAN.md — Slash command Go methods + frontend router for all 8 commands
-- [ ] 05-04-PLAN.md — Integration test suite + human verification checkpoint
+- [x] 05-02-PLAN.md — Frontend settings dialog with 5 tabs, settingsStore, StatusBar wiring
+- [x] 05-03-PLAN.md — Slash command Go methods + frontend router for all 8 commands
+- [x] 05-04-PLAN.md — Integration test suite + human verification checkpoint
 
 **Key deliverables:**
 - Settings dialog with 5 tabs: LLM Config, Prompts, Terminals, Hotkeys, Appearance
@@ -204,4 +204,4 @@ Plans:
 | 6 | Security Hardening | memguard, audit log, response filtering |
 | 7 | Distribution | .deb, .rpm, AppImage, clean install |
 
-**Status:** Phase 4 complete — Phase 5 planned, ready for execution
+**Status:** Phase 5 complete — Phase 6 (Security Hardening) ready for execution

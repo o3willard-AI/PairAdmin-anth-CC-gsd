@@ -129,7 +129,7 @@ Plans:
 
 **Requirements:** CFG-01–08, SLASH-01–08, CLIP-03
 
-**Plans:** 4 plans
+**Plans:** 0/4 plans executed
 
 Plans:
 - [ ] 05-01-PLAN.md — Go backend: expanded AppConfig, keychain integration, SettingsService RPCs, clipboard auto-clear

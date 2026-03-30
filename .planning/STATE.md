@@ -2,9 +2,10 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
-current_plan: "Plan 3 of 4"
+current_plan: "Plan 4 of 4"
 status: in_progress
-last_updated: "2026-03-30T01:44:10.031Z"progress:
+last_updated: "2026-03-30T15:30:00.000Z"
+progress:
   total_phases: 7
   completed_phases: 4
   total_plans: 19
@@ -25,8 +26,8 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 **Milestone:** v1.0 — Linux release
 **Active phase:** 05-settings-configuration-slash-commands (in progress)
 **Current plan:** Plan 3 of 4 (05-01, 05-02 complete)
-**Next action:** Execute Phase 5 Plan 03 — Slash command router
-**Last session:** 2026-03-30T01:44:10.031Z
+**Next action:** Execute Phase 5 Plan 04 — Settings persistence and final slash command wiring
+**Last session:** 2026-03-30T15:30:00Z
 ## Progress
 
 | Phase | Status |
@@ -35,7 +36,7 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 | 2 — LLM Gateway | green Complete (4/4 plans) |
 | 3 — tmux Capture | green Complete (3/3 plans) |
 | 4 — AT-SPI2 Adapters | green Complete (4/4 plans) |
-| 5 — Settings & Config | 🔄 In progress (2/4 plans) || 6 — Security Hardening | ⬜ Not started |
+| 5 — Settings & Config | 🔄 In progress (3/4 plans) || 6 — Security Hardening | ⬜ Not started |
 | 7 — Distribution | ⬜ Not started |
 
 ## Key Decisions Locked
@@ -61,6 +62,10 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 - **clearTimer time.AfterFunc with sync.Mutex** — non-blocking clipboard auto-clear; Stop() cancels without goroutine leak; second copy resets timer (05-01)
 - **SettingsService.js wailsjs stub at flat path** — `frontend/wailsjs/go/services/SettingsService.js`; gitignore `!` exception required (same as CaptureManager.js); force-add needed since wailsjs/ directory is globally excluded (05-02)
 - **settingsStore.activeModel drives StatusBar display** — gear icon onClick → setSettingsOpen(true); LLMConfigTab Save → setActiveModel(provider:model); StatusBar reads activeModel with "No model" fallback (05-02)
+- **captureManagerForceCapture interface on SettingsService** — duck-typing consistent with filterPipelineRebuilder (04-04); ForceCapture() wraps CaptureManager.tick() for /refresh command (05-03)
+- **LLMService.js wailsjs stub** — required for vitest import resolution of ChatPane's dynamic imports; gitignore exception added same as SettingsService.js (05-03)
+- **ChatPane import path ../../../wailsjs** — ../../wailsjs from src/components/chat/ resolves to src/wailsjs/ (wrong); corrected to ../../../wailsjs/ (frontend/wailsjs/) (05-03)
+- **Zustand beforeEach pre-populate tab key** — messagesByTab must have test-tab key initialized; empty {} causes selector ?? [] to return new array each render → infinite Zustand re-render loop (05-03)
 ---
 
 - **Vite v5 + TypeScript v5** required (Wails scaffold ships v3/4.6 but Tailwind v4 and @base-ui/react require upgrades)

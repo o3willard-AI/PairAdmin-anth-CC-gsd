@@ -2,9 +2,9 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
-current_plan: All 4 plans complete
-status: unknown
-last_updated: "2026-03-29T09:17:43.482Z"
+current_plan: Plan 3 of 4
+status: in_progress
+last_updated: "2026-03-30T01:39:19Z"
 progress:
   total_phases: 7
   completed_phases: 4
@@ -24,10 +24,10 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 ## Current Position
 
 **Milestone:** v1.0 — Linux release
-**Active phase:** 04-linux-gui-terminal-adapters-at-spi2 (complete)
-**Current plan:** All 4 plans complete
-**Next action:** Begin Phase 5 — Settings & Config
-**Last session:** 2026-03-29T09:17:43.473Z
+**Active phase:** 05-settings-configuration-slash-commands (in progress)
+**Current plan:** Plan 3 of 4 (05-02 complete)
+**Next action:** Execute Plan 05-03 (Slash commands) or 05-04
+**Last session:** 2026-03-30T01:39:19Z
 
 ## Progress
 
@@ -37,7 +37,7 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 | 2 — LLM Gateway | green Complete (4/4 plans) |
 | 3 — tmux Capture | green Complete (3/3 plans) |
 | 4 — AT-SPI2 Adapters | green Complete (4/4 plans) |
-| 5 — Settings & Config | ⬜ Not started |
+| 5 — Settings & Config | 🔄 In progress (2/4 plans) |
 | 6 — Security Hardening | ⬜ Not started |
 | 7 — Distribution | ⬜ Not started |
 
@@ -57,6 +57,8 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 - **CaptureManager.pipeline nil when no custom patterns** — zero-overhead on 500ms poll hot path; nil check before Apply in tick (04-04)
 - **applyFilterPipeline retained as package-level function** — ATSPIAdapter.Capture uses it for per-capture ANSI+credential filtering; CaptureManager.pipeline adds CustomFilter as second pass (04-04)
 - **system role in ChatMessage + addSystemMessage** — inline /filter command output in chat without LLM stream machinery; italic muted rendering (04-04)
+- **SettingsService.js wailsjs stub at flat path** — `frontend/wailsjs/go/services/SettingsService.js`; gitignore `!` exception required (same as CaptureManager.js); force-add needed since wailsjs/ directory is globally excluded (05-02)
+- **settingsStore.activeModel drives StatusBar display** — gear icon onClick → setSettingsOpen(true); LLMConfigTab Save → setActiveModel(provider:model); StatusBar reads activeModel with "No model" fallback (05-02)
 
 ---
 

@@ -69,18 +69,18 @@
 
 - [x] **CLIP-01**: "Copy to Terminal" button copies the command to the system clipboard
 - [x] **CLIP-02**: Application detects Wayland display server at startup and warns if `wl-clipboard` is not installed
-- [ ] **CLIP-03**: Clipboard contents copied by PairAdmin are automatically cleared after 60 seconds (configurable)
+- [x] **CLIP-03**: Clipboard contents copied by PairAdmin are automatically cleared after 60 seconds (configurable)
 
 ### Configuration & Settings
 
-- [ ] **CFG-01**: LLM provider and model are configurable via settings dialog (LLM Config tab)
-- [ ] **CFG-02**: API keys are stored in OS keychain using `99designs/keyring` (not plaintext config files)
-- [ ] **CFG-03**: Connection to configured provider can be tested from the settings dialog
-- [ ] **CFG-04**: User can provide a custom system prompt extension (appended to built-in prompt) via settings Prompts tab
-- [ ] **CFG-05**: AT-SPI2 polling interval is configurable via settings Terminals tab
-- [ ] **CFG-06**: Global hotkeys are configurable (copy last command, focus PairAdmin window)
-- [ ] **CFG-07**: Dark and light themes are available; dark is default
-- [ ] **CFG-08**: Settings are persisted to `~/.pairadmin/config.yaml` via Viper (no secrets in this file)
+- [x] **CFG-01**: LLM provider and model are configurable via settings dialog (LLM Config tab)
+- [x] **CFG-02**: API keys are stored in OS keychain using `99designs/keyring` (not plaintext config files)
+- [x] **CFG-03**: Connection to configured provider can be tested from the settings dialog
+- [x] **CFG-04**: User can provide a custom system prompt extension (appended to built-in prompt) via settings Prompts tab
+- [x] **CFG-05**: AT-SPI2 polling interval is configurable via settings Terminals tab
+- [x] **CFG-06**: Global hotkeys are configurable (copy last command, focus PairAdmin window)
+- [x] **CFG-07**: Dark and light themes are available; dark is default
+- [x] **CFG-08**: Settings are persisted to `~/.pairadmin/config.yaml` via Viper (no secrets in this file)
 
 ### Slash Commands
 
@@ -185,14 +185,14 @@
 | ATSPI-04 | Phase 4 | Complete |
 | FILT-04 | Phase 4 | Complete |
 | FILT-05 | Phase 4 | Complete |
-| CFG-01 | Phase 5 | Pending |
-| CFG-02 | Phase 5 | Pending |
-| CFG-03 | Phase 5 | Pending |
-| CFG-04 | Phase 5 | Pending |
-| CFG-05 | Phase 5 | Pending |
-| CFG-06 | Phase 5 | Pending |
-| CFG-07 | Phase 5 | Pending |
-| CFG-08 | Phase 5 | Pending |
+| CFG-01 | Phase 5 | Complete |
+| CFG-02 | Phase 5 | Complete |
+| CFG-03 | Phase 5 | Complete |
+| CFG-04 | Phase 5 | Complete |
+| CFG-05 | Phase 5 | Complete |
+| CFG-06 | Phase 5 | Complete |
+| CFG-07 | Phase 5 | Complete |
+| CFG-08 | Phase 5 | Complete |
 | SLASH-01 | Phase 5 | Pending |
 | SLASH-02 | Phase 5 | Pending |
 | SLASH-03 | Phase 5 | Pending |
@@ -201,7 +201,7 @@
 | SLASH-06 | Phase 5 | Pending |
 | SLASH-07 | Phase 5 | Pending |
 | SLASH-08 | Phase 5 | Pending |
-| CLIP-03 | Phase 5 | Pending |
+| CLIP-03 | Phase 5 | Complete |
 | SEC-01 | Phase 6 | Pending |
 | SEC-02 | Phase 6 | Pending |
 | SEC-03 | Phase 6 | Pending |

@@ -132,7 +132,7 @@ Plans:
 **Plans:** 0/4 plans executed
 
 Plans:
-- [ ] 05-01-PLAN.md — Go backend: expanded AppConfig, keychain integration, SettingsService RPCs, clipboard auto-clear
+- [x] 05-01-PLAN.md — Go backend: expanded AppConfig, keychain integration, SettingsService RPCs, clipboard auto-clear
 - [ ] 05-02-PLAN.md — Frontend settings dialog with 5 tabs, settingsStore, StatusBar wiring
 - [ ] 05-03-PLAN.md — Slash command Go methods + frontend router for all 8 commands
 - [ ] 05-04-PLAN.md — Integration test suite + human verification checkpoint

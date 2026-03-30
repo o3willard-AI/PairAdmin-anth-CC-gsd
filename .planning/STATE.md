@@ -4,8 +4,7 @@ milestone: v2.0
 milestone_name: milestone
 current_plan: "Plan 3 of 4"
 status: in_progress
-last_updated: "2026-03-30T01:44:10.031Z"
-progress:
+last_updated: "2026-03-30T01:44:10.031Z"progress:
   total_phases: 7
   completed_phases: 4
   total_plans: 19
@@ -28,7 +27,6 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 **Current plan:** Plan 3 of 4 (05-01, 05-02 complete)
 **Next action:** Execute Phase 5 Plan 03 — Slash command router
 **Last session:** 2026-03-30T01:44:10.031Z
-
 ## Progress
 
 | Phase | Status |
@@ -37,8 +35,7 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 | 2 — LLM Gateway | green Complete (4/4 plans) |
 | 3 — tmux Capture | green Complete (3/3 plans) |
 | 4 — AT-SPI2 Adapters | green Complete (4/4 plans) |
-| 5 — Settings & Config | yellow In progress (1/4 plans) |
-| 6 — Security Hardening | ⬜ Not started |
+| 5 — Settings & Config | 🔄 In progress (2/4 plans) || 6 — Security Hardening | ⬜ Not started |
 | 7 — Distribution | ⬜ Not started |
 
 ## Key Decisions Locked
@@ -62,7 +59,8 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 - **buildProviderFn package-level var in settings_service.go** — allows TestConnection to inject mock llm.Provider without modifying LLMService (05-01)
 - **LoadConfigWithViper in settings_service.go** — Viper-first config priority: AppConfig Provider/Model > PAIRADMIN_PROVIDER/MODEL env vars (D-04) (05-01)
 - **clearTimer time.AfterFunc with sync.Mutex** — non-blocking clipboard auto-clear; Stop() cancels without goroutine leak; second copy resets timer (05-01)
-
+- **SettingsService.js wailsjs stub at flat path** — `frontend/wailsjs/go/services/SettingsService.js`; gitignore `!` exception required (same as CaptureManager.js); force-add needed since wailsjs/ directory is globally excluded (05-02)
+- **settingsStore.activeModel drives StatusBar display** — gear icon onClick → setSettingsOpen(true); LLMConfigTab Save → setActiveModel(provider:model); StatusBar reads activeModel with "No model" fallback (05-02)
 ---
 
 - **Vite v5 + TypeScript v5** required (Wails scaffold ships v3/4.6 but Tailwind v4 and @base-ui/react require upgrades)

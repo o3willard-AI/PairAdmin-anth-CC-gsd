@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
-current_plan: "Plan 4 of 4"
+current_plan: "Plan 4 of 4 (complete)"
 status: in_progress
-last_updated: "2026-03-30T15:30:00.000Z"
+last_updated: "2026-03-29T00:10:00.000Z"
 progress:
   total_phases: 7
-  completed_phases: 4
+  completed_phases: 5
   total_plans: 19
-  completed_plans: 15
+  completed_plans: 16
 ---
 
 # Project State: PairAdmin v2.0
@@ -24,10 +24,10 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 ## Current Position
 
 **Milestone:** v1.0 — Linux release
-**Active phase:** 05-settings-configuration-slash-commands (in progress)
-**Current plan:** Plan 3 of 4 (05-01, 05-02 complete)
-**Next action:** Execute Phase 5 Plan 04 — Settings persistence and final slash command wiring
-**Last session:** 2026-03-30T15:30:00Z
+**Active phase:** 05-settings-configuration-slash-commands (complete)
+**Current plan:** Plan 4 of 4 (all complete)
+**Next action:** Execute Phase 06 — Security Hardening
+**Last session:** 2026-03-29T00:10:00Z
 ## Progress
 
 | Phase | Status |
@@ -36,7 +36,8 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 | 2 — LLM Gateway | green Complete (4/4 plans) |
 | 3 — tmux Capture | green Complete (3/3 plans) |
 | 4 — AT-SPI2 Adapters | green Complete (4/4 plans) |
-| 5 — Settings & Config | 🔄 In progress (3/4 plans) || 6 — Security Hardening | ⬜ Not started |
+| 5 — Settings & Config | green Complete (4/4 plans) |
+| 6 — Security Hardening | ⬜ Not started |
 | 7 — Distribution | ⬜ Not started |
 
 ## Key Decisions Locked
@@ -134,4 +135,4 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 
 ---
 *Initialized: 2026-03-25*
-*Last updated: 2026-03-28 — Phase 4 complete: Plan 04-04 executed. /filter slash commands with Viper persistence, CaptureManager custom filter pipeline, system message rendering. 68 frontend tests pass.*
+*Last updated: 2026-03-29 — Phase 5 complete: Plan 05-04 executed. Full integration verified — go build, go test, vitest all pass, human verified settings dialog (5 tabs), 8 slash commands, StatusBar live model, keychain storage in live Wails app.*

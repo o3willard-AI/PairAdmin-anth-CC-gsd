@@ -84,14 +84,14 @@
 
 ### Slash Commands
 
-- [ ] **SLASH-01**: `/model <provider:model>` switches the active LLM provider/model
-- [ ] **SLASH-02**: `/context <lines>` sets the terminal context window size
-- [ ] **SLASH-03**: `/refresh` forces re-capture of terminal content
-- [ ] **SLASH-04**: `/filter add|list|remove` manages sensitive data filter patterns
-- [ ] **SLASH-05**: `/export json|txt` exports current session chat history
-- [ ] **SLASH-06**: `/rename <label>` renames the current terminal tab
-- [ ] **SLASH-07**: `/theme dark|light` switches color scheme
-- [ ] **SLASH-08**: `/help` displays available commands
+- [x] **SLASH-01**: `/model <provider:model>` switches the active LLM provider/model
+- [x] **SLASH-02**: `/context <lines>` sets the terminal context window size
+- [x] **SLASH-03**: `/refresh` forces re-capture of terminal content
+- [x] **SLASH-04**: `/filter add|list|remove` manages sensitive data filter patterns
+- [x] **SLASH-05**: `/export json|txt` exports current session chat history
+- [x] **SLASH-06**: `/rename <label>` renames the current terminal tab
+- [x] **SLASH-07**: `/theme dark|light` switches color scheme
+- [x] **SLASH-08**: `/help` displays available commands
 
 ### Security & Audit
 
@@ -193,14 +193,14 @@
 | CFG-06 | Phase 5 | Complete |
 | CFG-07 | Phase 5 | Complete |
 | CFG-08 | Phase 5 | Complete |
-| SLASH-01 | Phase 5 | Pending |
-| SLASH-02 | Phase 5 | Pending |
-| SLASH-03 | Phase 5 | Pending |
-| SLASH-04 | Phase 5 | Pending |
-| SLASH-05 | Phase 5 | Pending |
-| SLASH-06 | Phase 5 | Pending |
-| SLASH-07 | Phase 5 | Pending |
-| SLASH-08 | Phase 5 | Pending |
+| SLASH-01 | Phase 5 | Complete |
+| SLASH-02 | Phase 5 | Complete |
+| SLASH-03 | Phase 5 | Complete |
+| SLASH-04 | Phase 5 | Complete |
+| SLASH-05 | Phase 5 | Complete |
+| SLASH-06 | Phase 5 | Complete |
+| SLASH-07 | Phase 5 | Complete |
+| SLASH-08 | Phase 5 | Complete |
 | CLIP-03 | Phase 5 | Complete |
 | SEC-01 | Phase 6 | Pending |
 | SEC-02 | Phase 6 | Pending |

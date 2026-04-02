@@ -159,6 +159,12 @@ Plans:
 
 **Requirements:** SEC-01–04
 
+**Plans:** 2 plans
+
+Plans:
+- [ ] 06-01-PLAN.md — Audit infrastructure: AuditLogger + AuditEntry package, memguard/lumberjack dependencies
+- [ ] 06-02-PLAN.md — memguard Enclave API key lifecycle, audit wiring into LLMService/CommandService/main.go, response-side credential filter, security review checklist
+
 **Key deliverables:**
 - `memguard` integration: API keys moved to locked memory pages after keychain retrieval; source slice zeroed; `LockedBuffer.Destroy()` on app exit
 - Audit logger using `slog` with JSON handler + `lumberjack` rotation: writes to `~/.pairadmin/logs/audit-YYYY-MM-DD.jsonl`

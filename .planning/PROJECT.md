@@ -24,8 +24,8 @@ The AI sees exactly what you see in the terminal — automatically, without copy
 - [ ] Command history sidebar (reverse-chronological, click-to-reuse)
 - [ ] Settings dialog (provider config, prompt extensions, hotkeys, appearance)
 - [ ] Slash command interface (/model, /filter, /context, /clear, /export, /rename)
-- [ ] Secure API key storage via OS keychain
-- [ ] Local audit log of all AI interactions
+- [x] Secure API key storage via OS keychain — Validated in Phase 5: 99designs/keyring; keys never in config.yaml
+- [x] Local audit log of all AI interactions — Validated in Phase 6: slog+lumberjack audit log, 5 event types, credential-filtered content
 - [ ] tmux adapter (Linux/macOS — subprocess via `tmux capture-pane`)
 - [x] Linux GUI terminal adapters (GNOME Terminal, Konsole via AT-SPI2) — Validated in Phase 4: AT-SPI2 adapter (D-Bus discovery, GetText capture, Konsole degraded badge, onboarding empty state)
 - [ ] Installable packages: AppImage + .deb/.rpm for Linux
@@ -62,7 +62,9 @@ The AI sees exactly what you see in the terminal — automatically, without copy
 | Linux-first scope for v1 | macOS hardware unavailable; Windows per-iteration VM QA impractical; tmux + AT-SPI2 covers a complete, shippable target audience | — Pending |
 | tmux as primary adapter | No special permissions, works over SSH, reliable subprocess API; covers the majority of serious sysadmin workflows | — Pending |
 | Pre-LLM filter pipeline mandatory | Terminal buffers routinely contain credentials; filtering cannot be optional or user-skippable for cloud providers | Validated Phase 2 — ANSI strip + credential regex pipeline in `services/llm/filter/` |
-| OS keychain for API key storage | Plaintext config files are unacceptable for credentials; OS keychain is the correct abstraction across all platforms | — Pending |
+| OS keychain for API key storage | Plaintext config files are unacceptable for credentials; OS keychain is the correct abstraction across all platforms | Validated Phase 5 — 99designs/keyring; API keys never in ~/.pairadmin/config.yaml |
+| memguard for in-memory key protection | Post-keychain retrieval, plain strings in process memory are a risk; memguard mlock pages prevent swapping and core dump exposure | Validated Phase 6 — Enclave lifecycle: seal at startup, open only in HTTP header builder stack frame, Purge() on exit |
+| Audit log for interaction traceability | Sysadmin tool handling credentials needs a local audit trail; slog+lumberjack provides structured, rotated, credential-filtered JSONL logs | Validated Phase 6 — 5 event types (session_start/end, user_message, ai_response, command_copied); response-side filter on ai_response entries |
 
 ## Evolution
 
@@ -82,4 +84,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-29 — Phase 4 complete: AT-SPI2 adapter + CaptureManager multi-adapter architecture + /filter commands + Viper persistence; 22/22 must-haves verified*
+*Last updated: 2026-04-02 — Phase 6 complete: memguard Enclave API key protection, slog+lumberjack audit log (5 event types), response-side credential filter, Ollama remote-host guard verified; 16/16 must-haves verified*

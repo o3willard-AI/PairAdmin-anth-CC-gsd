@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
-current_plan: "Plan 2 of 2 (06-security-hardening)"
-status: in_progress
-last_updated: "2026-04-02T04:47:00.000Z"
+current_plan: Phase 06 complete (2/2 plans done)
+status: phase_complete
+last_updated: "2026-04-02T05:00:50.182Z"
 progress:
   total_phases: 7
-  completed_phases: 5
+  completed_phases: 6
   total_plans: 21
-  completed_plans: 17
+  completed_plans: 21
 ---
 
 # Project State: PairAdmin v2.0
@@ -24,10 +24,11 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 ## Current Position
 
 **Milestone:** v1.0 — Linux release
-**Active phase:** 06-security-hardening (in progress)
-**Current plan:** Plan 2 of 2 (06-02 pending)
-**Next action:** Execute Phase 06 Plan 02 — memguard secrets + audit wiring
-**Last session:** 2026-04-02T04:47:00Z — Completed 06-01-PLAN.md
+**Active phase:** 06-security-hardening (complete)
+**Current plan:** Phase 06 complete (2/2 plans done)
+**Next action:** Execute Phase 07 — Distribution
+**Last session:** 2026-04-02T05:00:50.176Z — Completed 06-02-PLAN.md
+
 ## Progress
 
 | Phase | Status |
@@ -113,6 +114,9 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 - **ThreeColumnLayout test requires wailsjs/runtime mock when useTerminalCapture is mounted** — dynamic import of wailsjs/runtime fails in vitest without a vi.mock stub (03-03)
 - **memguard deferred to Plan 02** — go mod tidy removes unused deps; lumberjack retained via audit.go import; Plan 02 adds memguard import when SEC-01 EnclavedSecret code is created (06-01)
 - **AuditLogger nil-safe Write()** — nil receiver and nil logger field both return nil (no panic); matches SettingsService emitFn injectable guard pattern (06-01)
+- **Injectable clipboardSetFn on CommandService** — replaces direct runtime.ClipboardSetText call; enables test isolation for CopyToClipboard audit tests without Wails ctx (06-02)
+- **memguard Enclave lifecycle for API keys** — keys sealed at startup via keychainClient.Get() + memguard.NewBufferFromBytes().Seal(); getAPIKeyString opens LockedBuffer, copies bytes to string, calls buf.Destroy() immediately; memguard.Purge() in OnBeforeClose (06-02)
+- **buildProvider keyFn parameter** — func(string) string parameter allows Enclave-backed key retrieval to take precedence over Config fields; nil safe; settings_service.go passes nil for TestConnection (06-02)
 
 ## Research Completed
 

@@ -19,7 +19,7 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-25)
 
 **Core value:** The AI sees exactly what you see in the terminal — automatically, without copy/paste — so assistance is always in context.
-**Current focus:** Phase 05 — settings-configuration-slash-commands
+**Current focus:** Phase 06 — security-hardening
 
 ## Current Position
 
@@ -67,6 +67,7 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 - **LLMService.js wailsjs stub** — required for vitest import resolution of ChatPane's dynamic imports; gitignore exception added same as SettingsService.js (05-03)
 - **ChatPane import path ../../../wailsjs** — ../../wailsjs from src/components/chat/ resolves to src/wailsjs/ (wrong); corrected to ../../../wailsjs/ (frontend/wailsjs/) (05-03)
 - **Zustand beforeEach pre-populate tab key** — messagesByTab must have test-tab key initialized; empty {} causes selector ?? [] to return new array each render → infinite Zustand re-render loop (05-03)
+
 ---
 
 - **Vite v5 + TypeScript v5** required (Wails scaffold ships v3/4.6 but Tailwind v4 and @base-ui/react require upgrades)

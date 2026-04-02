@@ -96,8 +96,8 @@
 ### Security & Audit
 
 - [ ] **SEC-01**: API keys loaded from keychain into memory are protected using `memguard` (mlock, encrypted at rest in process)
-- [ ] **SEC-02**: All AI interactions are written to a local audit log at `~/.pairadmin/logs/audit-YYYY-MM-DD.jsonl` using Go's `slog` with `lumberjack` rotation
-- [ ] **SEC-03**: Audit log entries contain: timestamp, session ID, terminal ID, event type, sanitized content (filtered), command copied
+- [x] **SEC-02**: All AI interactions are written to a local audit log at `~/.pairadmin/logs/audit-YYYY-MM-DD.jsonl` using Go's `slog` with `lumberjack` rotation
+- [x] **SEC-03**: Audit log entries contain: timestamp, session ID, terminal ID, event type, sanitized content (filtered), command copied
 - [ ] **SEC-04**: LLM response content is scanned by the credential filter (lighter-weight pass) to catch model hallucinations of sensitive data
 
 ### Distribution
@@ -203,8 +203,8 @@
 | SLASH-08 | Phase 5 | Complete |
 | CLIP-03 | Phase 5 | Complete |
 | SEC-01 | Phase 6 | Pending |
-| SEC-02 | Phase 6 | Pending |
-| SEC-03 | Phase 6 | Pending |
+| SEC-02 | Phase 6 | Complete |
+| SEC-03 | Phase 6 | Complete |
 | SEC-04 | Phase 6 | Pending |
 | DIST-01 | Phase 7 | Pending |
 | DIST-02 | Phase 7 | Pending |

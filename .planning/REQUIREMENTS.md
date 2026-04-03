@@ -102,10 +102,10 @@
 
 ### Distribution
 
-- [ ] **DIST-01**: Application builds as a `.deb` package via nFPM with `libwebkit2gtk-4.1-0` declared as a runtime dependency
-- [ ] **DIST-02**: Application builds as an AppImage (with documented fallback to `.deb` for webkit runtime issues)
-- [ ] **DIST-03**: Application builds as an `.rpm` package via nFPM
-- [ ] **DIST-04**: Install script (`scripts/install-deps.sh`) installs all build-time dependencies on Ubuntu/Debian and Fedora/RHEL
+- [x] **DIST-01**: Application builds as a `.deb` package via nFPM with `libwebkit2gtk-4.1-0` declared as a runtime dependency
+- [x] **DIST-02**: Application builds as an AppImage (with documented fallback to `.deb` for webkit runtime issues)
+- [x] **DIST-03**: Application builds as an `.rpm` package via nFPM
+- [x] **DIST-04**: Install script (`scripts/install-deps.sh`) installs all build-time dependencies on Ubuntu/Debian and Fedora/RHEL
 
 ## v2 Requirements
 
@@ -206,10 +206,10 @@
 | SEC-02 | Phase 6 | Complete |
 | SEC-03 | Phase 6 | Complete |
 | SEC-04 | Phase 6 | Complete |
-| DIST-01 | Phase 7 | Pending |
-| DIST-02 | Phase 7 | Pending |
-| DIST-03 | Phase 7 | Pending |
-| DIST-04 | Phase 7 | Pending |
+| DIST-01 | Phase 7 | Complete |
+| DIST-02 | Phase 7 | Complete |
+| DIST-03 | Phase 7 | Complete |
+| DIST-04 | Phase 7 | Complete |
 
 **Coverage:**
 - v1 requirements: 57 total

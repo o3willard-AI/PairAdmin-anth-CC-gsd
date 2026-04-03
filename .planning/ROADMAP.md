@@ -10,12 +10,12 @@
 
 **Goal:** A working Wails + React desktop app with the three-column layout, mock terminal tabs, static chat UI, and clipboard support. No real terminal capture or LLM yet — but the skeleton is interactive and correct.
 
-**Requirements:** SHELL-01, SHELL-02, SHELL-03, SHELL-04, CHAT-01, CHAT-05, CHAT-06, CMD-01��05, CLIP-01, CLIP-02
+**Requirements:** SHELL-01, SHELL-02, SHELL-03, SHELL-04, CHAT-01, CHAT-05, CHAT-06, CMD-01–05, CLIP-01, CLIP-02
 
 **Plans:** 4/4 plans complete
 
 Plans:
-- [x] 01-01-PLAN.md ��� Scaffold Wails project, configure Tailwind/shadcn/Vitest, create Zustand stores
+- [x] 01-01-PLAN.md — Scaffold Wails project, configure Tailwind/shadcn/Vitest, create Zustand stores
 - [x] 01-02-PLAN.md — Three-column layout, terminal tabs, xterm.js preview, status bar
 - [x] 01-03-PLAN.md — Go clipboard service with Wayland detection
 - [x] 01-04-PLAN.md — Chat UI with echo response, command sidebar with click-to-copy
@@ -45,7 +45,7 @@ Plans:
 **Plans:** 4/4 plans complete
 
 Plans:
-- [x] 02-01-PLAN.md �� Go LLM provider interface, five provider adapters (OpenAI/OpenRouter/LM Studio/Anthropic/Ollama), LLMService with 50ms batching EventsEmit
+- [x] 02-01-PLAN.md — Go LLM provider interface, five provider adapters (OpenAI/OpenRouter/LM Studio/Anthropic/Ollama), LLMService with 50ms batching EventsEmit
 - [x] 02-02-PLAN.md — Filter pipeline: ANSI stripping (leaanthony/go-ansi-parser) + credential redaction (gitleaks + fallback regex)
 - [x] 02-03-PLAN.md — Frontend: chatStore streaming actions, terminalStore xterm ref registry, useLLMStream hook with reorder buffer
 - [x] 02-04-PLAN.md — Full wiring: ChatPane to LLMService, CodeBlock react-shiki component, TerminalPreview ref registration, StatusBar token count, human verify
@@ -108,7 +108,7 @@ Plans:
 - [x] 04-03-PLAN.md — Konsole spike + frontend degraded tab badge + AT-SPI2 onboarding empty state
 - [x] 04-04-PLAN.md — /filter add|list|remove slash commands with Viper config persistence and CustomFilter
 
-**Note:** Konsole support is experimental ��� AT-SPI2 text access is unconfirmed. This phase includes a spike to validate before full implementation.
+**Note:** Konsole support is experimental — AT-SPI2 text access is unconfirmed. This phase includes a spike to validate before full implementation.
 
 **Key deliverables:**
 - AT-SPI2 adapter using `github.com/godbus/dbus/v5` (no CGO): connect to accessibility bus via `org.a11y.Bus.GetAddress`, enumerate apps, filter by `ATSPI_ROLE_TERMINAL` (role 59)
@@ -184,6 +184,13 @@ Plans:
 
 **Requirements:** DIST-01–04
 
+**Plans:** 3 plans
+
+Plans:
+- [ ] 07-01-PLAN.md — nFPM config, Linux build assets (.desktop, icon), install-deps.sh
+- [ ] 07-02-PLAN.md — Build binary, package .deb/.rpm, AppImage (best-effort), SHA256SUMS, README
+- [ ] 07-03-PLAN.md — Clean install verification + final v1 acceptance criteria review
+
 **Key deliverables:**
 - nFPM config for `.deb` and `.rpm` with correct runtime dependencies (`libwebkit2gtk-4.1-0`, `at-spi2-core`)
 - AppImage build via Wails; document webkit bundling limitation (Issue #4313) and `.deb` as the recommended install path
@@ -210,4 +217,4 @@ Plans:
 | 6 | Security Hardening | memguard, audit log, response filtering |
 | 7 | Distribution | .deb, .rpm, AppImage, clean install |
 
-**Status:** Phase 5 complete — Phase 6 (Security Hardening) ready for execution
+**Status:** Phase 6 complete — Phase 7 (Distribution & Launch) ready for execution

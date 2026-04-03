@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
-current_plan: 2
+current_plan: 3
 status: in-progress
-last_updated: "2026-04-03T07:04:00.000Z"
+last_updated: "2026-04-03T07:13:33.000Z"
 progress:
   total_phases: 7
   completed_phases: 6
-  total_plans: 21
-  completed_plans: 21
+  total_plans: 24
+  completed_plans: 22
 ---
 
 # Project State: PairAdmin v2.0
@@ -25,9 +25,9 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 
 **Milestone:** v1.0 — Linux release
 **Active phase:** 07-distribution-launch (in progress)
-**Current plan:** 07-02 (next)
-**Next action:** Execute Phase 07 Plan 02 — Build and package artifacts
-**Last session:** 2026-04-03T07:04:00Z — Completed 07-01-PLAN.md
+**Current plan:** 07-03 (next)
+**Next action:** Execute Phase 07 Plan 03 — GitHub release and clean install verification
+**Last session:** 2026-04-03T07:13:33Z — Completed 07-02-PLAN.md
 
 ## Progress
 
@@ -39,7 +39,7 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 | 4 — AT-SPI2 Adapters | green Complete (4/4 plans) |
 | 5 — Settings & Config | green Complete (4/4 plans) |
 | 6 — Security Hardening | green Complete (2/2 plans) |
-| 7 — Distribution | yellow In progress (1/3 plans) |
+| 7 — Distribution | yellow In progress (2/3 plans) |
 
 ## Key Decisions Locked
 
@@ -50,7 +50,7 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 - **IsAvailable checks GetAddress not IsEnabled** — AT-SPI2 bus works even when GSettings IsEnabled=false; GetAddress is the correct reachability signal (04-02)
 - **OnboardingRequired via duck-typing in GetAdapterStatus** — CaptureManager uses interface{ OnboardingRequired(ctx) bool } assertion to decouple manager from atspi package types (04-02)
 - **GetText probe during Discover** — ATSPIAdapter probes getText on each discovered terminal at Discover time; marks Degraded=true on failure so tab shows warning badge immediately without silent capture failure (04-03)
-- **CaptureManager.js wailsjs stub** — stub at frontend/wailsjs/go/services/capture/CaptureManager.js with .gitignore exception enables vitest import resolution for ThreeColumnLayout's dynamic GetAdapterStatus call (04-03)
+- **CaptureManager.js wailsjs stub** — stub at frontend/wailsjs/go/capture/CaptureManager.js (corrected from services/capture/ path in 07-02; Wails codegen places it at go/capture/ not go/services/capture/); .gitignore exception updated (04-03, corrected 07-02)
 - **adapterStatus prop threading** — ThreeColumnLayout fetches GetAdapterStatus and passes result as prop to TerminalPreview; keeps TerminalPreview testable without dynamic import complexity in its own tests (04-03)
 - **vi.mock depth from __tests__ subdir** — from frontend/src/components/__tests__/ the path to wailsjs is 4 levels up (../../../../wailsjs/...); path differs from component source which uses 3 levels (../../../wailsjs/...) (04-03)
 - **filterPipelineRebuilder interface on LLMService** — duck-typing consistent with OnboardingRequired pattern (04-02); decouples services package from capture package (04-04)

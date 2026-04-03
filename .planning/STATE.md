@@ -2,9 +2,9 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
-current_plan: Not started
-status: unknown
-last_updated: "2026-04-02T05:13:06.227Z"
+current_plan: 2
+status: in-progress
+last_updated: "2026-04-03T07:04:00.000Z"
 progress:
   total_phases: 7
   completed_phases: 6
@@ -24,10 +24,10 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 ## Current Position
 
 **Milestone:** v1.0 — Linux release
-**Active phase:** 06-security-hardening (complete)
-**Current plan:** Not started
-**Next action:** Execute Phase 07 — Distribution
-**Last session:** 2026-04-02T05:00:50.176Z — Completed 06-02-PLAN.md
+**Active phase:** 07-distribution-launch (in progress)
+**Current plan:** 07-02 (next)
+**Next action:** Execute Phase 07 Plan 02 — Build and package artifacts
+**Last session:** 2026-04-03T07:04:00Z — Completed 07-01-PLAN.md
 
 ## Progress
 
@@ -38,8 +38,8 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 | 3 — tmux Capture | green Complete (3/3 plans) |
 | 4 — AT-SPI2 Adapters | green Complete (4/4 plans) |
 | 5 — Settings & Config | green Complete (4/4 plans) |
-| 6 — Security Hardening | ⬜ Not started |
-| 7 — Distribution | ⬜ Not started |
+| 6 — Security Hardening | green Complete (2/2 plans) |
+| 7 — Distribution | yellow In progress (1/3 plans) |
 
 ## Key Decisions Locked
 

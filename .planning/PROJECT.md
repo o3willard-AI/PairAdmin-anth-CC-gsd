@@ -28,7 +28,7 @@ The AI sees exactly what you see in the terminal — automatically, without copy
 - [x] Local audit log of all AI interactions — Validated in Phase 6: slog+lumberjack audit log, 5 event types, credential-filtered content
 - [ ] tmux adapter (Linux/macOS — subprocess via `tmux capture-pane`)
 - [x] Linux GUI terminal adapters (GNOME Terminal, Konsole via AT-SPI2) — Validated in Phase 4: AT-SPI2 adapter (D-Bus discovery, GetText capture, Konsole degraded badge, onboarding empty state)
-- [ ] Installable packages: AppImage + .deb/.rpm for Linux
+- [x] Installable packages: AppImage + .deb/.rpm for Linux — Validated in Phase 7: nFPM .deb/.rpm, AppImage via appimagetool, SHA256SUMS, human-verified on Ubuntu 22.04/24.04 + Fedora 40
 
 ### Out of Scope
 
@@ -84,4 +84,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-02 — Phase 6 complete: memguard Enclave API key protection, slog+lumberjack audit log (5 event types), response-side credential filter, Ollama remote-host guard verified; 16/16 must-haves verified*
+*Last updated: 2026-04-03 — Phase 7 complete: nFPM .deb/.rpm, AppImage via appimagetool, SHA256SUMS, scripts/install-deps.sh, README with install instructions; human-verified clean install on Ubuntu 22.04/24.04 + Fedora 40; v1-approved — all 7 phases complete, PairAdmin v1.0 ready for GitHub release*
